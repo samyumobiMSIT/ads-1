@@ -1,0 +1,22 @@
+The WeightedQuickUnionUF class represents the best case analysis of problem. It is  a union–find data type (also known as the disjoint-sets data type). It supports the union and find operations, along with a connected operation for determining whether two sites are in the same component and a count operation that returns the total number of components.
+
+Weighted quick union (and/or path compression) makes it possible to solve problems that could not otherwise be addressed.
+
+N 	lg* N
+1 	0
+2 	1
+4 	2
+16 	3
+65536	4
+265536	 5
+
+Weighted Quick union with path compression. Just after computing the root of p, set the id[] of each examined node to point to that root.We add second loop to find() to set the id[] of each examined node to the root. Make every other node in path
+point to its grandparent.
+
+public int find(int i)
+{
+ while (i != id[i])
+ {
+ id[i] = id[id[i]];  // points to the root [root[node]]
+ i = id[i];
+ }
