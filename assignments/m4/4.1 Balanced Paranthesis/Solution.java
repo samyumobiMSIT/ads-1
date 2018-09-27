@@ -14,4 +14,20 @@ public class Solution{
 		if (ch == '<') { return '>'; }
 		return '0';
 	}
+	public static boolean isStarting(char ch) {
+		if (ch == '(' || ch == '[' || ch == '{' || ch == '<') {
+			return true;
+		}
+		return false;
+	}
+	public static String readInput() {
+		BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
+		String  str = null;
+		try {
+			str = br.readLine().trim();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return str;
+	}
 }
