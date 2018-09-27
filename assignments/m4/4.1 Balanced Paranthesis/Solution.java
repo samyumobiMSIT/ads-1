@@ -1,3 +1,4 @@
+import java.util.Stack;
 public class Solution{
 	 private static final char LEFT_PAREN     = '(';
     private static final char RIGHT_PAREN    = ')';
@@ -39,9 +40,11 @@ public class Solution{
     }
 
 public static void public static void main(String[] args) {
-	 In in = new In();
-        String s = in.readAll().trim();
-        StdOut.println(isBalanced(s));
+		String beTrue = "[()]{}[{[()()]()}]";
+        String beFalse = "{[(])}";
+        System.out.println("True? " + balancedParentheses(beTrue));
+        System.out.println("False? " + balancedParentheses(beFalse));
+	
 }
 
 }
