@@ -4,6 +4,32 @@ public class Solution{
 		System.out.println("Valid: "+validate(expr));
 	}
 	public static boolean validate(String exp){
+		if (null == expr) { return true; }
+		Stack<Character> stack = new Stack<Character>();
+		int len = expr.length();
+		if (0 == len) { return true; }
+		
+		for (int i=0; i<len; i++) {
+			char ch = expr.charAt(i);
+			if (isStarting(ch)) {
+				stack.push(ch);
+			} else {
+				if (stack.isEmpty()) { return false; }
+				char top = stack.peek();
+				char tmp = getMatching(top);
+				if (tmp == ch) {
+					stack.pop();
+				} else {
+					return false;
+				}
+			}
+		}
+		
+		if (!stack.isEmpty()) {
+			return false;
+		}
+		return true;
+		
 
 	}
 
