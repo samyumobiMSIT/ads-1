@@ -38,4 +38,10 @@ public class Solution{
     	return Stack.isEmpty();
     }
 
+public static void public static void main(String[] args) {
+	 In in = new In();
+        String s = in.readAll().trim();
+        StdOut.println(isBalanced(s));
+}
+
 }
