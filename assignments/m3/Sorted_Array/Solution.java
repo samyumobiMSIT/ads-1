@@ -118,7 +118,7 @@ public final class Solution {
 
         }
 
-        String str = Arrays.toString(array);
+            String str = Arrays.toString(array);
 
         System.out.println(str.replace("[", "").replace("]", "").
 
