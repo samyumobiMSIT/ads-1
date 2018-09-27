@@ -5,10 +5,10 @@ import java.util.Stack;
 
 public class Solution{
 	public static void main(String[] a){
-		String exp = readInput();
+		String expr = readInput();
 		System.out.println("Valid: "+validate(expr));
 	}
-	public static boolean validate(String exp){
+	public static boolean validate(String expr){
 		if (null == expr) { return true; }
 		Stack<Character> stack = new Stack<Character>();
 		int len = expr.length();
