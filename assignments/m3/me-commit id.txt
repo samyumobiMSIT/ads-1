@@ -1,4 +1,8 @@
-
+commit a822061c7ed10f37bfea746ab22682b0af9ffaab
 3-sum
 
 commit 4ada853d589fcbd96ce75a54498c211ca912c5aa
+ No_of_pairs
+
+commit 8aca81693b7de797e89c15e655f7e6e526689924
+Sortey-array assign -2
