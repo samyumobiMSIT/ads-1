@@ -1,64 +1,31 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Stack;
-
-public class Solution{
-	public static void main(String[] a){
-		String expr = readInput();
-		System.out.println("Valid: "+validate(expr));
-	}
-	public static boolean validate(String expr){
-		if (null == expr) { return true; }
-		Stack<Character> stack = new Stack<Character>();
-		int len = expr.length();
-		if (0 == len) { return true; }
-		
-		for (int i=0; i<len; i++) {
-			char ch = expr.charAt(i);
-			if (isStarting(ch)) {
-				stack.push(ch);
-			} else {
-				if (stack.isEmpty()) { return false; }
-				char top = stack.peek();
-				char tmp = getMatching(top);
-				if (tmp == ch) {
-					stack.pop();
-				} else {
-					return false;
-				}
-			}
-		}
-		
-		if (!stack.isEmpty()) {
-			return false;
-		}
-		return true;
-		
-
-	}
-
-	public static char getMatching(char ch){
-		if (ch == '(') { return ')'; }
-		if (ch == '{') { return '}'; }
-		if (ch == '[') { return ']'; }
-		if (ch == '<') { return '>'; }
-		return '0';
-	}
-	public static boolean isStarting(char ch) {
-		if (ch == '(' || ch == '[' || ch == '{' || ch == '<') {
-			return true;
-		}
-		return false;
-	}
-	public static String readInput() {
-		BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
-		String  str = null;
-		try {
-			str = br.readLine().trim();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return str;
-	}
+import java.util.Scanner;
+/**
+ * Solution class.
+ */
+final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //Empty constructor.
+    }
+    /**
+     * Main method.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = Integer.parseInt(sc.nextLine());
+        while (n != 0) {
+            String[] input = sc.nextLine().split("");
+            Balanced b = new Balanced();
+            if (b.balancing(input)) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
+            }
+            n--;
+        }
+    }
 }
