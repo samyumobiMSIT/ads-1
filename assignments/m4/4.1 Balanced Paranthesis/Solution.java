@@ -2,7 +2,7 @@ import java.util.Scanner;
 /**
  * Solution class.
  */
-final class Solution {
+final class Solution extends Balanced {
     /**
      * Constructs the object.
      */
@@ -19,7 +19,7 @@ final class Solution {
         int n = Integer.parseInt(sc.nextLine());
         while (n != 0) {
             String[] input = sc.nextLine().split("");
-        Solution b = new Solution();
+        Balanced b = new Balanced();
             if (b.balancing(input)) {
                 System.out.println("YES");
             } else {
