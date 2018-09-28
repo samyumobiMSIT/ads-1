@@ -19,7 +19,7 @@ final class Solution {
         int n = Integer.parseInt(sc.nextLine());
         while (n != 0) {
             String[] input = sc.nextLine().split("");
-            Balanced b = new Balanced();
+        Solution b = new Solution();
             if (b.balancing(input)) {
                 System.out.println("YES");
             } else {
