@@ -14,6 +14,8 @@ class AddLargeNumbers {
 
     public static String digitsToNumber(LinkedList list) {
 
+        return list.toString();
+
     }
 
     public static LinkedList addLargeNumbers(LinkedList list1, LinkedList list2) {
