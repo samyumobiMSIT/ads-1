@@ -1,0 +1,33 @@
+stack
+stack using linked list
+
+linked list
+union find no
+others tracing
+
+pratice quick union , infix, postfix 
+
+do not practice queues
+
+practice complexity probs
+
+for (i=1;i<n;i++) print ( hello) break;
+
+stack using arrays  => 1. general array , 2 => resizing arrays
+
+time complexity
+
+		array	stackusingarray		LL
+============================================================
+stack		1		N		1
+push		1		N		1
+pop		1		N		1
+
+INSERT@begin	1
+Inser@end	1
+delete@begin	N
+delete@end
+insertMid
+deleMid
+InsertAfter
+delAfter
