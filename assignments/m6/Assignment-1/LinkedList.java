@@ -1,116 +1,99 @@
+class LinkedList {
 
-import java.util.Iterator;
-import java.util.ArrayList;
-import java.util.List;
+    Node first = null;
 
-public class LinkedList<Item> implements Iterable<Item> {
+    Node last = null;
 
+    int size = 0;
 
+    class Node {
 
-	private class Node<Item> {
+        String data;
 
-		Item item;
+        Node next;
 
-		Node<Item> next;
+        Node(String data) {
 
-	}
+            this.data = data;
 
+        }
 
+    }
 
-	private Node<Item> first;
+    public boolean isEmpty() {
 
-	private Node<Item> last;
+        return size == 0;
 
+    }
 
+    public void push(String element) {
 
-	public Iterator<Item> iterator() {
+        Node newnode = new Node(element);
 
-		return new ListIterator(this.first);
+        if (isEmpty()) {
 
-	}
+            first = newnode;
 
-public class ListIterator<Item> implements Iterator<Item> {
+            last = first;
 
-		private Node<Item> current;
+            last.next = null;
 
+            size++;
 
+            return;
 
-		public ListIterator(Node<Item> first) {
+        }
 
-			current = first;
+        Node oldlast = last;
 
-		}
+        last = newnode;
 
+        oldlast.next = last;
 
+        last.next = null;
 
-		public boolean hasNext() {
+        size++;
 
-			return current != null;
 
-		}
 
+    }
 
+    public String pop() {
 
-		public Item next() {
+        if (isEmpty()) {
 
-			Item item = (Item) current.item;
+            return null;
 
-			current = current.next;
+        }
 
-			return item;
+        String item = first.data;
 
-		}
+        first = first.next;
 
+        size--;
 
+        return item;
 
-		public void remove() { }
 
-	}
 
+    }
 
+    public void printList() {
 
-	public void insert(Item item) {
+        Node tnode = first;
 
-		Node<Item> temp = new Node<Item>();
+        while (tnode != null) {
 
-		temp.item = item;
+            System.out.print(tnode.data + " ");
 
-		temp.next = null;
+            tnode = tnode.next;
 
+        }
 
+        System.out.println();
 
-		if (first == null) {
 
-			first = temp;
 
-			last = temp;
-
-		} else {
-
-			last.next = temp;
-
-			last = temp;
-
-		}
-
-	}
-
-
-
-	public String toString() {
-
-		StringBuffer sb = new StringBuffer();
-
-		Iterator<Item> iter = this.iterator();
-
-		while(iter.hasNext()) {
-
-			sb.append(iter.next());
-
-		}
-
-		return sb.toString();
-
-	}
+    }
 
 }
