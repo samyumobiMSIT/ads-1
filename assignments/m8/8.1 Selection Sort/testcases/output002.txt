@@ -1,0 +1,7 @@
+[1, 2, 3, 4, 5, 6, 7]
+[-7, -8, -9, 4, 5, 6, 7, 8, 9]
+[11121.55, 12122.45, 12123.44, 13212.54]
+[egg, few, hut, jay, men]
+[gig, joy, owl, rap, wee]
+[fee, tap, tar, wad, was]
+[all, bad, dug, jam, yet]

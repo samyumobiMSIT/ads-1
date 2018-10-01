@@ -1,0 +1,5 @@
+[bed, bug, dad, yes, zoo]
+[dim, for, ilk, now, tip]
+[jot, nob, sky, sob, tag]
+[001, 010, 1, 100, 100, 101, 110]
+[112, 121, 122, 123, 131, 132, 133]
