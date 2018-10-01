@@ -1,9 +1,8 @@
-
-
 import java.util.Scanner;  
 import java.util.Comparator;
 import  java.util.Arrays;
-  
+
+//Solution class
 public class Solution {
 	public static void sort(Comparable[] a) {
 	//sort and compares elements
@@ -18,10 +17,9 @@ for (int i = 0; i < n; i++) {
 	 	}
 	 	}
 	 }
-	 
 	 // is v < w ?
-	    private static boolean less(final Comparable i,final Comparable j) {
-	        return i.compareTo(j) < 0;
+	  private static boolean less(final Comparable i,final Comparable j) {
+	  	return i.compareTo(j) < 0;
 	    }
 	     // exchange a[i] and a[j]
 	    private static void exch(final Comparable[] a, final int i, final int j) {
@@ -29,12 +27,10 @@ for (int i = 0; i < n; i++) {
 	        a[i] = a[j];
 	        a[j] = swap;
 	    }
-
-   public static void main(String args[])  
-   {  
-    Scanner scan = new Scanner(System.in);
-    String input = scan.nextLine();
-    for (int i = 0; i < Integer.parseInt(input); i++) {
+	    public static void main(String args[]){
+	    Scanner scan = new Scanner(System.in);
+    	String input = scan.nextLine();
+    	for (int i = 0; i < Integer.parseInt(input); i++) {
     	String str = scan.nextLine();
     	String[] string = str.split(" ");
     	Solution.sort(string);
