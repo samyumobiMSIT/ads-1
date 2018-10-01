@@ -21,13 +21,13 @@ public class Solution
 	    }
 	 
 	 // is v < w ?
-	    private static boolean less(Comparable i,Comparable j) {
+	    private static boolean less(final Comparable i,final Comparable j) {
 	        return i.compareTo(j) < 0;
 	    }
 	        
 	        
 	    // exchange a[i] and a[j]
-	    private static void exch(final Comparable[] a, int i, int j) {
+	    private static void exch(final Comparable[] a, final int i, final int j) {
 	        Comparable swap = a[i];
 	        a[i] = a[j];
 	        a[j] = swap;
@@ -47,9 +47,7 @@ public class Solution
        for (int i = 0; i < Integer.parseInt(input); i++) {
            String str = scan.nextLine();
            String[] string = str.split(" ");
-         
-        
-         Solution.sort(string);
+           Solution.sort(string);
          System.out.println(Arrays.toString(string));
          
        
