@@ -4,18 +4,18 @@ import  java.util.Arrays;
 
 //Solution class
 public class Solution {
-	public static void sort(Comparable[] a) {
+	public static void sort(final Comparable[] a) {
 	//sort and compares elements
-int n = a.length;
-for (int i = 0; i < n; i++) {
-	int min = i;
-	 for (int j = i+ 1; j < n; j++) {
-	 	if (less(a[j], a[min])) {
-	 		min = j;
-	 	}
-	 	 exch(a, i, min);
-	 	}
-	 	}
+		int n = a.length;
+		for (int i = 0; i < n; i++) {
+			int min = i;
+			for (int j = i+ 1; j < n; j++) {
+				if (less(a[j], a[min])) {
+					min = j;
+				}		
+			}
+			exch(a, i, min);
+		}
 	 }
 	 // is v < w ?
 	  private static boolean less(final Comparable i,final Comparable j) {
@@ -38,4 +38,5 @@ for (int i = 0; i < n; i++) {
     	System.out.println(Arrays.toString(string));
     }
    } 
-   } 
+   }
+    
