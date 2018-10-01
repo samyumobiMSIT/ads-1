@@ -1,20 +1,20 @@
-package ADS1;
+
 
 import java.util.Scanner;  
 import java.util.Comparator;
 import  java.util.Arrays;
   
-public class Solution
-{  
+public class Solution {  
 	 public static void sort(Comparable[] a) {
-	        int n = a.length;
+	 	//sort and compares elements
+	        int n = a.length; 
 	        for (int i = 0; i < n; i++) {
 	            int min = i;
 	            for (int j = i+1; j < n; j++) {
-	                if (less(a[j], a[min])) min = j;
-	             
-	         
-	           exch(a, i, min); 
+	                if (less(a[j], a[min])){
+	                	min = j;
+	                }      
+	                exch(a, i, min); 
 	              } 
 	        } 
 	       
@@ -24,25 +24,16 @@ public class Solution
 	    private static boolean less(final Comparable i,final Comparable j) {
 	        return i.compareTo(j) < 0;
 	    }
-	        
-	        
-	    // exchange a[i] and a[j]
+	     // exchange a[i] and a[j]
 	    private static void exch(final Comparable[] a, final int i, final int j) {
 	        Comparable swap = a[i];
 	        a[i] = a[j];
 	        a[j] = swap;
 	    }
-
-	  
-
-
-	
+	    
    public static void main(String args[])  
    {  
-	   
-        
-      Scanner scan = new Scanner(System.in);     
-      
+    Scanner scan = new Scanner(System.in);        
        String input = scan.nextLine();
        for (int i = 0; i < Integer.parseInt(input); i++) {
            String str = scan.nextLine();
