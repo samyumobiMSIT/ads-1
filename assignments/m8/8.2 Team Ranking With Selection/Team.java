@@ -1,69 +1,77 @@
-public class Team implements Comparable{
-	private  int wins;
-	private  int losses;
-	private  int draws;
-	private String Team_name;
+public class Team implements Comparable {
+	private String teamName;
+	private int Wins;
+	private int Losses;
+	private int Draws;
 
-	public Team( String Team_name, int wins, int losses,  int draws) {
-	
-	this.Team_name=Team_name;
-	this.wins=wins;
-	 this.losses=losses;
-	this.draws=draws;
+	public Team(final String teamName,
+	            final int Wins,
+	            final int Losses,
+	            final int Draws) {
+		this.teamName = teamName;
+		this.Wins = Wins;
+		this.Losses = Losses;
+		this.Draws = Draws;
 	}
 
-	public String getNam(){
-		return Team_name;
+	public int getDraws() {
+		return Draws;
 	}
-	public int setNam(String Team_name){
-		this.Team_name=Team_name;
+
+	public void setDraws(int Draws) {
+		this.Draws = Draws;
 	}
-	public int getDraws(){
-		return draws;
+
+	public int getLosses() {
+		return Losses;
 	}
-	public int setDraws(int draws){
-		this.draws=draws;
+
+	public void setLosses(int Losses) {
+		this.Losses = Losses;
 	}
-	public void getWins(){
-		return wins;
+
+	public int getWins() {
+		return Wins;
 	}
-	public void setWins(int wins){
-		this.wins=wins;
+
+	public void setWins(int Wins) {
+		this.Wins = Wins;
 	}
-	public void getLosses(){
-		return losses;
+
+	public String getTeamName() {
+		return teamName;
 	}
-	public void setLosses(int losses){
-		this.losses=losses;
+
+	public void setTeamName(String teamName) {
+		this.teamName = teamName;
 	}
 
 	public int compareTo(Object other) {
-		Team that=(Team) other;
-		//Object other
-		if(this.getWins() < that.getWins())
-			return + 1;		
-		if(this.getLosses() > that.getLosses())
-			return + 1;		
-		if(this.getDraws() < that.getDraws())
-			return + 1;
-		if(this.getWins() > that.getWins())
-			return - 1;		
-		if(this.getLosses() < that.getLosses())
-			return - 1;		
-		if(this.getDraws() > that.getDraws())
-			return - 1;
-		
+		Team that = (Team) other;
+		if (this.getWins() > that.getWins())
+			return -1;
+		if (this.getWins() < that.getWins())
+			return 1;
+
+		if (this.getLosses() < that.getLosses())
+			return -1;
+		if (this.getLosses() > that.getLosses())
+			return 1;
+
+		if (this.getDraws() > that.getDraws())
+			return -1;
+		if (this.getDraws() < that.getDraws())
+			return 1;
+
 		return 0;
-	}	
-
-	public String toString() { // print Name,win,loss,draws
-		
-		return this.getNam();
-		
-
-
 	}
 
-
-
+	public String toString() {
+		// StringBuffer sb = new StringBuffer();
+		// sb.append(this.getTeamName() + ",");
+		// sb.append(this.getWins() + ",");
+		// sb.append(this.getDraws() + ",");
+		// sb.append(this.getLosses());
+		return this.getTeamName();
+	}
 }
