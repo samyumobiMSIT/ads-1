@@ -4,7 +4,7 @@ public class Team implements Comparable{
 	private  int draws;
 	private String Team_name;
 
-	public Team(final String Team_name,final int wins,final int losses, final int draws) {
+	public Team( String Team_name, int wins, int losses,  int draws) {
 	
 	this.Team_name=Team_name;
 	this.wins=wins;
@@ -24,42 +24,40 @@ public class Team implements Comparable{
 	public int setDraws(int draws){
 		this.draws=draws;
 	}
-	public int getWins(){
+	public void getWins(){
 		return wins;
 	}
-	public int setWins(int wins){
+	public void setWins(int wins){
 		this.wins=wins;
 	}
-	public int getLosses(){
+	public void getLosses(){
 		return losses;
 	}
-	public int setLosses(int losses){
+	public void setLosses(int losses){
 		this.losses=losses;
 	}
 
 	public int compareTo(Object other) {
 		Team that=(Team) other;
 		//Object other
-		if(this.getWins() < that.getWins()) return + 1;
-		
-		if(this.getLosses() > that.getLosses()) return + 1;
-		
-		if(this.getDraws() < that.getDraws()) return + 1;
-
-		if(this.getWins() > that.getWins()) return - 1;
-		
-		if(this.getLosses() < that.getLosses()) return - 1;
-		
-		if(this.getDraws() > that.getDraws()) return - 1;
+		if(this.getWins() < that.getWins())
+			return + 1;		
+		if(this.getLosses() > that.getLosses())
+			return + 1;		
+		if(this.getDraws() < that.getDraws())
+			return + 1;
+		if(this.getWins() > that.getWins())
+			return - 1;		
+		if(this.getLosses() < that.getLosses())
+			return - 1;		
+		if(this.getDraws() > that.getDraws())
+			return - 1;
 		
 		return 0;
-	}
-
-	
+	}	
 
 	public String toString() { // print Name,win,loss,draws
 		
-
 		return this.getNam();
 		
 
