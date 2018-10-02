@@ -1,8 +1,8 @@
-public class Team implements Comparable<Team>{
-	private final int wins;
-	private final int losses;
-	private final int draws;
-	private final string Team_name;
+public class Team implements Comparable{
+	private  int wins;
+	private  int losses;
+	private  int draws;
+	private String Team_name;
 
 	public Team(final String Team_name,final int wins,final int losses, final int draws) {
 	
@@ -30,10 +30,10 @@ public class Team implements Comparable<Team>{
 	public int setWins(int wins){
 		this.wins=wins;
 	}
-	public int getLossess(){
+	public int getLosses(){
 		return losses;
 	}
-	public int setLossess(int losses){
+	public int setLosses(int losses){
 		this.losses=losses;
 	}
 
@@ -42,15 +42,15 @@ public class Team implements Comparable<Team>{
 		//Object other
 		if(this.getWins() < that.getWins()) return + 1;
 		
-		if(this.getlosses() > that.getlosses()) return + 1;
+		if(this.getLosses() > that.getLosses()) return + 1;
 		
-		if(this.getdraws() < that.getdraws()) return + 1;
+		if(this.getDraws() < that.getDraws()) return + 1;
 
 		if(this.getWins() > that.getWins()) return - 1;
 		
-		if(this.getlosses() < that.getlosses()) return - 1;
+		if(this.getLosses() < that.getLosses()) return - 1;
 		
-		if(this.getdraws() > that.getdraws()) return - 1;
+		if(this.getDraws() > that.getDraws()) return - 1;
 		
 		return 0;
 	}
