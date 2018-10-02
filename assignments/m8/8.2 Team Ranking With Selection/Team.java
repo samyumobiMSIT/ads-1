@@ -4,37 +4,37 @@ public class Team implements Comparable<Team>{
 	private final int draws;
 	private final string Team_name;
 
-	public Team(final String Team_name,final int w,final int l, final int d) {
-	wins=w,losses=l,draws=d;
+	public Team(final String Team_name,final int wins,final int losses, final int draws) {
+	
 	this.Team_name=Team_name;
-	public int wins();{ return wins;}
-	public int losses();{ return losses;}
-	public int draws();{ return draws;}
+	this.wins=wins;
+	 this.losses=losses;
+	this.draws=draws;
 	}
 
 	public String getNam(){
 		return Team_name;
 	}
-	public int setNam(){
+	public int setNam(String Team_name){
 		this.Team_name=Team_name;
 	}
 	public int getDraws(){
 		return draws;
 	}
-	public int setDraws(){
+	public int setDraws(int draws){
 		this.draws=draws;
 	}
 	public int getWins(){
 		return wins;
 	}
-	public int setWins(){
+	public int setWins(int wins){
 		this.wins=wins;
 	}
 	public int getLossess(){
-		return lossess;
+		return losses;
 	}
-	public int setLossess(){
-		this.lossess=lossess;
+	public int setLossess(int losses){
+		this.losses=losses;
 	}
 
 	public int compareTo(Team that) {
