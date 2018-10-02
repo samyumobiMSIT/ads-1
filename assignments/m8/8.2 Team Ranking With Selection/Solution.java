@@ -9,14 +9,13 @@ for (int i = 0; i < n; i++ ) {
 	for (int j = i; j > n; j--) {
 		if (less(a[j], a[j- 1])) {
 			exch(a, j, j- 1);
-		}
-		else {
+		}else {
 			break;
 		}
 	}
 		}
 	 }
-	 // is v < w ?
+// is v < w ?
 	  private static boolean less(final Comparable i,final Comparable j) {
 	  	return i.compareTo(j) < 0;
 	    }
@@ -26,7 +25,7 @@ for (int i = 0; i < n; i++ ) {
 	        a[i] = a[j];
 	        a[j] = swap;
 	    }
-	    //main method
+//main method
 	    public static void main(String[] args) {
 	    Scanner scan = new Scanner(System.in);
     	String input = scan.nextLine();
@@ -36,6 +35,5 @@ for (int i = 0; i < n; i++ ) {
     	Solution.sort(string);
     	System.out.println(Arrays.toString(string));
     }
-   } 
-   }
-    
+    }
+}    
