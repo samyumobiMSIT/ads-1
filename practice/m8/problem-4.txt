@@ -1,0 +1,28 @@
+Reverse order SS, IS
+
+Perforrming sorting of numbers arranged in reverse order causes the wordt case complexity.
+
+Insertion sort takes (n-1 ) comparisons and n number of exchanges.
+
+Selection sort takes less number of comparisons (N)  to perform exchanges and (N^2/2) number of comparisons.
+
+Analysis of Insertion sort with number of exchanges and comparisons:
+
+IS Worst case		c	e	10	9	8	7	6	5
+N-1 comp, N exc		1	5	9	10	8	7	6	5
+	2	5	9		8	10			
+	3	5	9		8	7	10		
+	4	5	9		8	7	6	10	
+	5	5	9		8	7	6	5	10
+
+
+Analysis of Selection sort with number of exchanges and comparisons:
+
+SS WC														
+N^2/2 comp, N exch									comp exc
+		5	4	3	2	1		5	4	3	2	1	1	1
+		5	4	3	1	2		1	4	3	2	5	2	1
+		5	4	1	3	2		1	2	3	4	5	3	1
+		5	1	4	3	2		1	2	3	4	5	4	1
+		1	5	4	3	2		1	2	3	4	5	5	1
+														
