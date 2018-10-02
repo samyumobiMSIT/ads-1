@@ -60,7 +60,7 @@ public class Team implements Comparable<Team>{
 	public String toString() { // print Name,win,loss,draws
 		
 
-		return Team_name + "," +draws + "," + lossess + "," + draws;
+		return this.getNam();
 		
 
 
