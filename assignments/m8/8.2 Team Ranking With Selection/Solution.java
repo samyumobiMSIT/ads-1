@@ -29,13 +29,28 @@ for (int i = 0; i < n; i++ ){
 	    
 	    public static final void main(String[] args) {
 	    Scanner scan = new Scanner(System.in);
-    	String input = scan.nextLine();
+	    int i=0;
+	    StringBuffer b=new StringBuffer();
+	    while(scan.hasNext()){
+	    	b.append(scan.nextLine() + ": :");
+	    }
+	    String[] lines = b.toString().split(": :");
+	    Team[] t=new Team[lines.length];
+	    for(String line : lines) {
+	    	String[] tokens = line.split(",");
+            teams[i++] = new Team(tokens[0],
+            	Integer.parseInt(tokens[1]),
+            	Integer.parseInt(tokens[2]),
+            	Integer.parseInt(tokens[THREE]));
+	    }
+	    
+    	/**String input = scan.nextLine();
     	for (int i = 0; i < Integer.parseInt(input); i++) {
     	String str = scan.nextLine();
     	String[] string = str.split(" ");
     	Solution.sort(string);
-    	System.out.println(Arrays.toString(string));
+    	System.out.println(Arrays.toString(string));**/
     	
     }
     }
-}
+
