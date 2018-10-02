@@ -1,22 +1,19 @@
 import java.util.Scanner;  
-import java.util.Comparator;
 import  java.util.Arrays;
-
 //Solution class
 public class Solution {
 	public static void sort(final Comparable[] a) {
-	//sort and compares elements
-		int n = a.length;
-		for (int i = 0; i < n; i++) {
-			for (int j = i; j > n; j--) {
-				if (less(a[j], a[j-1])) {
-					exch(a, j, j-1);
-				}
-				else{
-					break;
-				}		
-			}
-			
+//sort and compares elements
+int n = a.length;
+for (int i = 0; i < n; i++ ) {
+	for (int j = i; j > n; j--) {
+		if (less(a[j], a[j- 1])) {
+			exch(a, j, j- 1);
+		}
+		else {
+			break;
+		}
+	}
 		}
 	 }
 	 // is v < w ?
