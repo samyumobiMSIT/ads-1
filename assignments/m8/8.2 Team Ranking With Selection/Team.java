@@ -37,8 +37,8 @@ public class Team implements Comparable<Team>{
 		this.losses=losses;
 	}
 
-	public int compareTo(Team that) {
-		//Team that=(Team) other;
+	public int compareTo(Object other) {
+		Team that=(Team) other;
 		//Object other
 		if(this.getWins() < that.getWins()) return + 1;
 		
