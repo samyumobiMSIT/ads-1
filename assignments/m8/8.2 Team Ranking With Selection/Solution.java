@@ -4,15 +4,15 @@ import  java.util.Arrays;
 public class Solution { //Solution class
 public static void sort(final Comparable[] a) {//sort method
 //sort and compares elements
-int n = a.length;
+int n = a.length,min;
 for (int i = 0; i < n; i++ ){
-	for (int j = i; j > n; j--) {
+		min=i;
+	for (int j = i+1; j < n; j++) {
 		if (less(a[j], a[j - 1])) {
-			exch(a, j, j - 1);
-		} else {
-			break;
-		}
-	}
+			min=j;
+			
+		} 
+	 }exch(a, j, j - 1);
 		}
 	 }
 // is v < w ?
@@ -26,6 +26,7 @@ for (int i = 0; i < n; i++ ){
 	        a[j] = swap;
 	    }
 //main method
+	    
 	    public static final void main(String[] args) {
 	    Scanner scan = new Scanner(System.in);
     	String input = scan.nextLine();
@@ -34,6 +35,7 @@ for (int i = 0; i < n; i++ ){
     	String[] string = str.split(" ");
     	Solution.sort(string);
     	System.out.println(Arrays.toString(string));
+    	
     }
     }
 }
