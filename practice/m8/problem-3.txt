@@ -1,0 +1,11 @@
+ Insertion sort will do O(1) work per element and visit O(n) elements for a total runtime of O(n). Selection sort always runs in time O(n2) regardless of the input structure, so its runtime will be quadratic.
+
+		0	1	2		i
+IS		1	1	1		3
+		1	1	1		3
+		1	1	1		3
+						
+SS		0	1	2		i
+		1				1
+		1	1	1		2
+		1	1	1		3
