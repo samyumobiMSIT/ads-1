@@ -1,6 +1,6 @@
 import java.util.Scanner;
 /**
- * Solution class.
+ * Solution class. for balanced
  */
 final class Solution extends Balanced {
     /**
