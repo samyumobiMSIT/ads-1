@@ -41,3 +41,4 @@ class InsertionSort {
 		a[i] = a[j];
 		a[j] = swap;
 	}
+}
