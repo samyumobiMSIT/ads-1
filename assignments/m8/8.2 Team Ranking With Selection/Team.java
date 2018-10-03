@@ -1,77 +1,102 @@
-public class Team implements Comparable {
-	private String teamName;
-	private int Wins;
-	private int Losses;
-	private int Draws;
-
-	public Team(final String teamName,
-	            final int Wins,
-	            final int Losses,
-	            final int Draws) {
-		this.teamName = teamName;
-		this.Wins = Wins;
-		this.Losses = Losses;
-		this.Draws = Draws;
+/**
+ * Class for team.
+ */
+class Team implements Comparable<Team> {
+	String teamname;
+	int wins, losses, draws;
+	Team(String teamname, int wins, int losses, int draws) {
+		this.teamname = teamname;
+		this.wins = wins;
+		this.losses = losses;
+		this.draws = draws;
 	}
-
-	public int getDraws() {
-		return Draws;
+	/**
+	 * Gets the teamname.
+	 *
+	 * @return     The teamname.
+	 */
+	public String getTeamname() {
+          return this.teamname;
 	}
-
-	public void setDraws(int Draws) {
-		this.Draws = Draws;
-	}
-
-	public int getLosses() {
-		return Losses;
-	}
-
-	public void setLosses(int Losses) {
-		this.Losses = Losses;
-	}
-
+	/**
+	 * Gets the wins.
+	 *
+	 * @return     The wins.
+	 */
 	public int getWins() {
-		return Wins;
+		return this.wins;
 	}
-
-	public void setWins(int Wins) {
-		this.Wins = Wins;
+	/**
+	 * Gets the losses.
+	 *
+	 * @return     The losses.
+	 */
+	public int getLosses() {
+		return this.losses;
 	}
-
-	public String getTeamName() {
-		return teamName;
+	/**
+	 * Gets the draws.
+	 *
+	 * @return     The draws.
+	 */
+	public int getDraws() {
+		return this.draws;
 	}
-
-	public void setTeamName(String teamName) {
-		this.teamName = teamName;
+	/**
+	 * Sets the teamname.
+	 *
+	 * @param      teamname  The teamname
+	 */
+	public void setTeamname(String teamname) {
+		this.teamname = teamname;
 	}
-
-	public int compareTo(Object other) {
-		Team that = (Team) other;
-		if (this.getWins() > that.getWins())
-			return -1;
-		if (this.getWins() < that.getWins())
-			return 1;
-
-		if (this.getLosses() < that.getLosses())
-			return -1;
-		if (this.getLosses() > that.getLosses())
-			return 1;
-
-		if (this.getDraws() > that.getDraws())
-			return -1;
-		if (this.getDraws() < that.getDraws())
-			return 1;
-
+	/**
+	 * Sets the wins.
+	 *
+	 * @param      wins  The wins
+	 */
+	public void setWins(int wins) {
+		this.wins = wins;
+	}
+	/**
+	 * Sets the losses.
+	 *
+	 * @param      losses  The losses
+	 */
+	public void setLosses(int losses) {
+		this.losses = losses;
+	}
+	/**
+	 * Sets the draws.
+	 *
+	 * @param      draws  The draws
+	 */
+	public void setDraws(int draws) {
+		this.draws = draws;
+	}
+	/**
+	 * Returns a string representation of the object.
+	 *
+	 * @return     String representation of the object.
+	 */
+	public String toString() {
+		return this.teamname;
+	}
+	/**
+	 * { function_description }
+	 *
+	 * @param      that  The that
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
+	public int compareTo(Team that) {
+		if(this.wins > that.wins) return -1;
+		if(this.wins < that.wins) return 1;
+		if(this.losses < that.losses) return -1;
+		if(this.losses > that.losses) return 1;
+		if(this.draws > that.draws) return -1;
+		if(this.draws < that.draws) return 1;
 		return 0;
 	}
 
-	public String toString() {
-		// StringBuffer sb = new StringBuffer();
-		// sb.append(this.getTeamName() + ",");
-		// sb.append(this.getWins() + ",");
-		// sb.append(this.getDraws() + ",");
-		// sb.append(this.getLosses());
-		return this.getTeamName();
-	}
 }
