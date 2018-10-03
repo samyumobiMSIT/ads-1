@@ -1,0 +1,8 @@
+M5-A5
+
+The code:
+Stack stack=new Stack() // Creates a pointer(object ) to stack 
+while(!q.isEmpty()) // Checks if queue is not empty condition. Executes code till condition os false
+stack.push(q.dequeue()); //q.dequeue takes out elements from queue that is termed as dequeue using the object pointer q and by calling dequeue method. Later pushes the elements into the stack by calling stack.push() method.
+while(!stack.isEmpty()) // Checks if stack is empty condition . true= continues execution else halt
+q.enqueue(stack.pop()) // stack object pops elements from stack and q.enqueue method is called. Elements from stack are pushed into queue.
