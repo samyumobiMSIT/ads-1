@@ -1,0 +1,13 @@
+				L	M	H	0	1	2	3	4	5	6	7	8	9	10	11
+TOP DOWN METHOD							E	A	S	Y	Q	U	E	S	T	I	O	N
+				0	0	1	A	E										
+				0	1	2	A	E	S									
+				3	3	4				Q	Y							
+				3	4	5				Q	U	Y						
+				0	2	5	A	E	Q	S	U	Y						
+				6	6	7							E	S				
+				6	7	8							E	S	T			
+				9	9	10										I	O	
+				9	10	11										I	N	O
+				6	8	11							E	I	N	O	S	T
+				11	5	11	A	E	E	I	N	O	Q	S	S	T	U	Y
