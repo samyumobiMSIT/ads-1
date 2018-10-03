@@ -1,8 +1,0 @@
-7
-pushLeft 1
-pushRight 2
-size
-pushLeft 3
-popLeft
-popRight
-popLeft
