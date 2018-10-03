@@ -1,0 +1,8 @@
+Suppose that a client performs an intermixed sequence of enqueue and dequeue operations on a queue. The enqueue operations put the integers 0 through 9 in order on the queue; the dequeue operations print out the returned value. Which of the following sequence(s) could not occur?
+
+a. 0 1 2 3 4 5 6 7 8 9
+b. 4 6 8 7 5 3 2 9 0 1
+c. 2 5 6 7 4 8 9 3 1 0
+d. 4 3 2 1 0 5 6 7 8 9
+
+The question says that the numbers are enqueued in order, so the 0 must be the first number enqueued. Because a queue is a first-in-first-out data structure, the first element dequeued must also be the 0. Only one of the sequences (a) starts with 0 so (b), (c), and (d) could not occur.
