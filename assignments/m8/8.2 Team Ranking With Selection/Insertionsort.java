@@ -36,7 +36,7 @@ class InsertionSort {
 	 * @param      j     { parameter_description }
 	 */
 	private static void exch(final Comparable[] a,
-	                         final int i, final int j) {
+		final int i, final int j) {
 		Comparable swap = a[i];
 		a[i] = a[j];
 		a[j] = swap;
