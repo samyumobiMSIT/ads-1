@@ -1,5 +1,4 @@
-
-
+//Binary Search
 	public class Solution
 	{ 
 	    // Returns index of x if it is present in arr[],  
