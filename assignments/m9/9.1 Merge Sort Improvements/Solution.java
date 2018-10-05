@@ -20,10 +20,10 @@ final class Solution {
         final int len = 50;
         String[] tokens = new String[len];
         while (s.hasNextLine()) {
-             tokens = s.nextLine().split(",");
-             m.sort(tokens);
+            tokens = s.nextLine().split(",");
+            m.sort(tokens);
             System.out.println(m.print(tokens));
             System.out.println();
-        }
+    }
     }
 }
