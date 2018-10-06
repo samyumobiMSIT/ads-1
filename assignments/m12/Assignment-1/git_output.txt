@@ -1,0 +1,3 @@
+[master 096eea0] "ads1_m12_a1: 6/6 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 0/1 "
+ 6 files changed, 66 insertions(+), 39 deletions(-)
+ rewrite assignments/m12/Assignment-1/result/score.json (76%)

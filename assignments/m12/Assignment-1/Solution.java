@@ -41,6 +41,7 @@ final class Solution {
         in Descending merit order in given format.**/
         meritFill(vacancies, unres, bc, sc, st);
     }
+    /** method to fulfill merit count **/
     public static void meritFill(final int vacancies,
         final int unres, final int bc, final int sc, final int st) {
         int ucount = 0;
@@ -48,6 +49,11 @@ final class Solution {
         int ccount = 0;
         int tcount = 0;
         int vcount = 0;
+        /** ucount = unreserved students
+            bc= bc students count
+            ccount= sc students count 
+            tcount == st count
+            vcount == vacancies count**/
         for (int i = 0; i < students.size(); i++) {
             if(ucount == unres) {
                 break;
