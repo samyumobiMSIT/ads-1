@@ -1,7 +1,8 @@
 /**
- * Class for student.
+ * Student Class with input details
  */
 class Student implements Comparable<Student> {
+    /*Implements Comparator Interface*/ 
     String name;
     int m1;
     int m2;
@@ -12,7 +13,7 @@ class Student implements Comparable<Student> {
     int month;
     int year;
     /**
-     * Constructs the object.
+     * Student Constructor
      *
      * @param      name    The name
      * @param      dob     The dob
@@ -36,12 +37,15 @@ class Student implements Comparable<Student> {
 
     }
     public int compareTo(final Student other) {
+        //student who got more total marks will be given the priority
         if (this.total > other.total) {
             return 1;
         }
         if (this.total < other.total) {
              return -1;
         }
+        /** if subject 3 marks are equal then student who got more 
+        marks in subject 2 will be given the priority. **/
         if (this.m3 > other.m3) {
             return 1;
         }
@@ -54,6 +58,9 @@ class Student implements Comparable<Student> {
         if (this.m2 < other.m2) {
             return -1;
         }
+        /**if subject 2 marks are equal then younger student 
+        will be given priority.
+         **/
         if (this.year > other.year) {
             return 1;
         }
@@ -74,12 +81,18 @@ class Student implements Comparable<Student> {
         }
         return 0;
     }
+    //rescat == reservation category
+    /**Un reserved category seats should be filled with descending merit order
+reserved seats should be filled with reserved students in descending merit order
+if any of the reserved seats are left with out reserved candidates then fill the seats with descending merit order  **/
     public int compare(final Student other) {
         if((this.rescat.equals("SC") || this.rescat.equals("ST")
             || this.rescat.equals("BC") && other.rescat.equals("Open"))) {
             return 1;
         }
-        if((other.rescat.equals("SC")
+        
+        /** All applicants are eligible for un reserved category seats **/
+    if((other.rescat.equals("SC")
             || other.rescat.equals("ST") || other.rescat.equals("BC")
             && this.rescat.equals("Open"))) {
             return -1;

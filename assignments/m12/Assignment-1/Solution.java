@@ -28,12 +28,17 @@ final class Solution {
             students.add(s);
         }
         selectionSort();
+        /** Print student name, total marks, Reservation category of
+         the student object in Descending merit order in given format**/
         for (int i = 0; i < students.size(); i++) {
             System.out.println(students.get(i).name
                 + "," + students.get(i).total
                 + "," + students.get(i).rescat);
         }
+        //print an empty line
         System.out.println();
+        /** print list of all the students who filled the vacancies 
+        in Descending merit order in given format.**/
         meritFill(vacancies, unres, bc, sc, st);
     }
     public static void meritFill(final int vacancies,
