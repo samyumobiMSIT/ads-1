@@ -1,71 +1,89 @@
-/** Student 
-Class to take inputs in given test case format**/
+/**
+ * Class for student.
+ */
 class Student implements Comparable<Student> {
-    String sname;
-    String bday;
-    int sm1;
-    int sm2;
-    int sm3;
-    int tmarks;
+    String name;
+    int m1;
+    int m2;
+    int m3;
+    int total;
     String rescat;
-    /** Student Method 
-    to display student details**/
-    Student(String name, String dob, int sub1, int sub2, int sub3, int total, String category) {
-        this.sname = name;
-        this.bday = dob;
-        this.sm1 = sub1;
-        this.sm2 = sub2;
-        this.sm3 = sub3;
-        this.tmarks = total;
-        this.rescat = category;
+    int day;
+    int month;
+    int year;
+    /**
+     * Constructs the object.
+     *
+     * @param      name    The name
+     * @param      dob     The dob
+     * @param      m1      The m 1
+     * @param      m2      The m 2
+     * @param      m3      The m 3
+     * @param      total   The total
+     * @param      rescat  The rescat
+     */
+    Student(String sname, String dob, String mark1, String mark2, String mark3, String totals, String res) {
+        this.name = sname;
+        String[] d = dob.split("-");
+        this.day = Integer.parseInt(d[0]);
+        this.month = Integer.parseInt(d[1]);
+        this.year = Integer.parseInt(d[2]);
+        this.m1 = Integer.parseInt(mark1);
+        this.m2 = Integer.parseInt(mark2);
+        this.m3 = Integer.parseInt(mark3);
+        this.total = Integer.parseInt(totals);
+        this.rescat = res;
+
     }
-    /** Split date time and month 
-    in date with '-'
-    **/
-    String[] splitDate() {
-        String[] splitdate = bday.split("-");
-        return splitdate;
-    }
-    /**Student class uses other object 
-    to compare every parameter**/
-    public int compareTo(Student other) {
-        if (this.tmarks > other.tmarks) {
+    public int compareTo(final Student other) {
+        if (this.total > other.total) {
             return 1;
         }
-        if (this.tmarks < other.tmarks) {
+        if (this.total < other.total) {
+             return -1;
+        }
+        if (this.m3 > other.m3) {
+            return 1;
+        }
+        if (this.m3 < other.m3) {
             return -1;
         }
-        if (this.sm3 > other.sm3) {
+        if (this.m2 > other.m2) {
             return 1;
         }
-        if (this.sm3 < other.sm3) {
+        if (this.m2 < other.m2) {
             return -1;
         }
-        if (this.sm2 > other.sm2) {
+        if (this.year > other.year) {
             return 1;
         }
-        if (this.sm2 < other.sm2) {
+        if (this.year < other.year) {
             return -1;
         }
-        if (Integer.parseInt(this.splitDate()[2]) > Integer.parseInt(other.splitDate()[2])) {
+        if (this.month > other.month) {
             return 1;
         }
-        if (Integer.parseInt(this.splitDate()[2]) < Integer.parseInt(other.splitDate()[2])) {
+        if (this.month < other.month) {
             return -1;
         }
-        if (Integer.parseInt(this.splitDate()[1]) > Integer.parseInt(other.splitDate()[1])) {
+        if (this.day < other.day) {
             return 1;
         }
-        if (Integer.parseInt(this.splitDate()[1]) < Integer.parseInt(other.splitDate()[1])) {
-            return -1;
-        }
-        if (Integer.parseInt(this.splitDate()[0]) > Integer.parseInt(other.splitDate()[0])) {
-            return 1;
-        }
-        if (Integer.parseInt(this.splitDate()[0]) < Integer.parseInt(other.splitDate()[0])) {
+        if (this.day > other.day) {
             return -1;
         }
         return 0;
     }
-
+    public int compare(final Student other) {
+        if((this.rescat.equals("SC") || this.rescat.equals("ST")
+            || this.rescat.equals("BC") && other.rescat.equals("Open"))) {
+            return 1;
+        }
+        if((other.rescat.equals("SC")
+            || other.rescat.equals("ST") || other.rescat.equals("BC")
+            && this.rescat.equals("Open"))) {
+            return -1;
+        }
+        return 0;
+    }
 }

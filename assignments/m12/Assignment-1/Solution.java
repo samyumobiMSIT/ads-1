@@ -1,88 +1,145 @@
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.ArrayList;
-
-public class Solution {
-    Solution() {
-        //unused
-    }
-
-/**Main
-Method **/
-public static void main(String[] args) {
-	Scanner s =  new Scanner(System.in);
-    int num = Integer.parseInt(s.nextLine());
-    Student[] students = new Student[num];
-    int vac = Integer.parseInt(s.nextLine());
-    int unres= Integer.parseInt(s.nextLine());
-    int bcvac = Integer.parseInt(s.nextLine());
-    int scvac = Integer.parseInt(s.nextLine());
-    int stvac = Integer.parseInt(s.nextLine());
-    for (int i = 0; i < num; i++) {
-    	String line = s.nextLine();
-    	String[] tokens = line.split(",");
-    	Student eachstudentdata = new Student(tokens[0], tokens[1],
-                    Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3]),
-                    Integer.parseInt(tokens[4]), Integer.parseInt(tokens[5]), tokens[6]);
-            students[i] = eachstudentdata;
+/**
+ * Class for solution.
+ */
+final class Solution {
+    static ArrayList<Student> vaclist = new ArrayList<>();
+    static ArrayList<Student> students = new ArrayList<>();
+    /**
+     * main method.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int Lines = Integer.parseInt(scanner.nextLine());
+        int vacancies = Integer.parseInt(scanner.nextLine());
+        int unres = Integer.parseInt(scanner.nextLine());
+        int bc = Integer.parseInt(scanner.nextLine());
+        int sc = Integer.parseInt(scanner.nextLine());
+        int st = Integer.parseInt(scanner.nextLine());
+        while (scanner.hasNext()) {
+            String[] tokens = scanner.nextLine().split(",");
+            Student s = new Student(tokens[0], tokens[1],
+                tokens[2], tokens[3], tokens[4],
+                tokens[5], tokens[6]);
+            students.add(s);
         }
-        InsertionSort insertion = new InsertionSort();
-        insertion.sort(students);
-        print(students);
+        selectionSort();
+        for (int i = 0; i < students.size(); i++) {
+            System.out.println(students.get(i).name
+                + "," + students.get(i).total
+                + "," + students.get(i).rescat);
+        }
         System.out.println();
-        FilterResults(students, vac, unres, bcvac, scvac, stvac);
+        meritFill(vacancies, unres, bc, sc, st);
     }
+    public static void meritFill(final int vacancies,
+        final int unres, final int bc, final int sc, final int st) {
+        int ucount = 0;
+        int bcount = 0;
+        int ccount = 0;
+        int tcount = 0;
+        int vcount = 0;
+        for (int i = 0; i < students.size(); i++) {
+            if(ucount == unres) {
+                break;
+            } 
+                vaclist.add(students.get(i));
+                ucount++;
+                vcount++;
+        }
+        for (int i = 0; i < students.size(); i++) {
+            if(bcount == bc) {
+                break;
+            }
+            if(students.get(i).rescat.equals("BC")) {
+                if(!vaclist.contains(students.get(i))) {
+                    vaclist.add(students.get(i));
+                    bcount++;
+                    vcount++;
+                }   
+            }
+        }
+        for (int i = 0; i < students.size(); i++) {
+            if(ccount == sc) {
+                break;
+            }
+            if(students.get(i).rescat.equals("SC")) {
+                if(!vaclist.contains(students.get(i))) {
 
-/** Filter Results by 
-s3> s2> s1> younger 
-parameters: Student class info details in form of list
-vac- vacanises , unres- unreserved, categorys**/
-	 public static void FilterResults(Student[] list, int vac, int unres, int bc, int sc, int st) {
-        for (int i = 0; i < list.length && vac > 0; i++) {
-            if (unres > 0) { 
-            	/** check if there are any unreserved seats **/
-                System.out.println(list[i].sname + "," +
-                                   list[i].tmarks + "," +
-                                   list[i].rescat);
-                unres--;
-            } else if (list[i].rescat.equals("BC") || list[i].rescat.equals("SC") || list[i].rescat.equals("ST")) {
-                if (list[i].rescat.equals("BC") && bc > 0) { 
-                // reserve seats for BC category
-                    System.out.println(list[i].sname + "," +
-                                       list[i].tmarks + "," +
-                                       list[i].rescat);
-                    bc--;
-                } else if (list[i].rescat.equals("SC") && sc > 0) {
-                	  // reserve seats for SC category
-                    System.out.println(list[i].sname + "," +
-                                       list[i].tmarks + "," +
-                                       list[i].rescat);
-                    sc--;
-                } else if (list[i].rescat.equals("ST") && st > 0) {
-                	  // reserve seats for St category
-                    System.out.println(list[i].sname + "," +
-                                       list[i].tmarks + "," +
-                                       list[i].rescat);
-                    st--;
-                } else {
+                    vaclist.add(students.get(i));
+                    ccount++;
+                    vcount++;
+                }
+            }   
+        }
+        for (int i = 0; i < students.size(); i++) {
+            if(tcount == st) {
+                break;
+            }
+            if(students.get(i).rescat.equals("ST")) {
+                if(!vaclist.contains(students.get(i))) {
+                    vaclist.add(students.get(i));
+                    tcount++;
+                    vcount++;
                 }
             }
         }
-        vac--;
-    }
-/** Print the Student List by iterating through
- the student list array defined in Student.java **/
-	 public static void print(Student[] list) {
-        for (int i = 0; i < list.length; i++) {
-            System.out.println(list[i].sname + "," +
-                               list[i].tmarks + "," +
-                               list[i].rescat);
+        for (int i = 0; i < students.size(); i++) {
+            if(vcount == vacancies) {
+                break;
+            } 
+            if(!vaclist.contains(students.get(i))) {
+                vaclist.add(students.get(i));
+                vcount++;
+            }
+        }
+        sortfinal();
+        for (int i = 0; i < vaclist.size(); i++) {
+            if( i == vacancies) {
+                break;
+            }
+            System.out.println(vaclist.get(i).name
+                + "," + vaclist.get(i).total + ","
+                + vaclist.get(i).rescat);
         }
     }
+    public static void sortfinal() {
+        for (int i = vaclist.size() - 1; i >= 0; i--) {
+            Student max = vaclist.get(i);
+            int index = -1;
+            for (int j = i - 1; j >= 0; j--) {
+                if (max.compareTo(vaclist.get(j)) == 1) {
+                    max = vaclist.get(j);
+                    index = j;
+                }
+            }
+            Student temp = vaclist.get(i);
+            vaclist.set(i, max);
+            if (index != -1) {
+                vaclist.set(index, temp);
+            }
+        }
+    }
+    public static void selectionSort() {
+        for (int i = students.size() - 1; i >= 0; i--) {
+            Student max = students.get(i);
+            int index = -1;
+            for (int j = i - 1; j >= 0; j--) {
+                if (max.compareTo(students.get(j)) == 1) {
+                    max = students.get(j);
+                    index = j;
+                }
+            }
+            Student temp = students.get(i);
+            students.set(i, max);
+            if (index != -1) {
+                students.set(index, temp);
+            }
+        }
+    }
+
 }
-    
-
-
-
-
-
