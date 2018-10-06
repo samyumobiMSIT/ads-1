@@ -1,0 +1,4 @@
+Starting audit...
+[ERROR] D:\ads-1\assignments\m12\Assignment-1\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+Audit done.
+Checkstyle ends with 1 errors.
