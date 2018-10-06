@@ -1,4 +1,4 @@
-public class Student {
+public class Student implements Comparable<Student> {
 
 	public Student() {
 	 String name,rc;
