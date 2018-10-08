@@ -1,3 +1,3 @@
 Is an array that is sorted in Ascending order a min-oriented heap? Why?
 
-For a min heap, we must have A[Parent(i)] <= A[i]. For an array in sorted order, the children of any node at index k, if they exist, are at 2*k and/or 2*k + 1. Since the array is in sorted order and they are at a greater index, both children are greater than or equal to the parent, satisfying the min heap property.
+Yes. For a min heap, we must have A[Parent(i)] <= A[i]. For an array in sorted order, the children of any node at index k, if they exist, are at 2*k and/or 2*k + 1. Since the array is in sorted order and they are at a greater index, both children are greater than or equal to the parent, satisfying the min heap property.

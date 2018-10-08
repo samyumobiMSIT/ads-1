@@ -55,15 +55,15 @@ final class Solution {
             tcount == st count
             vcount == vacancies count**/
         for (int i = 0; i < students.size(); i++) {
-            if(ucount == unres) {
+            if(ucount == unres) { //unreserved students count == unreserved seats
                 break;
             } 
-                vaclist.add(students.get(i));
+                vaclist.add(students.get(i)); 
                 ucount++;
                 vcount++;
         }
         for (int i = 0; i < students.size(); i++) {
-            if(bcount == bc) {
+            if(bcount == bc) { //check if count bc =bc
                 break;
             }
             if(students.get(i).rescat.equals("BC")) {
@@ -75,7 +75,7 @@ final class Solution {
             }
         }
         for (int i = 0; i < students.size(); i++) {
-            if(ccount == sc) {
+            if(ccount == sc) { //checking if sc count is full
                 break;
             }
             if(students.get(i).rescat.equals("SC")) {
@@ -88,7 +88,7 @@ final class Solution {
             }   
         }
         for (int i = 0; i < students.size(); i++) {
-            if(tcount == st) {
+            if(tcount == st) { // check if st count is empty or needs to be filled
                 break;
             }
             if(students.get(i).rescat.equals("ST")) {
@@ -100,28 +100,29 @@ final class Solution {
             }
         }
         for (int i = 0; i < students.size(); i++) {
-            if(vcount == vacancies) {
+            if(vcount == vacancies) { // check for open vacancies
                 break;
             } 
             if(!vaclist.contains(students.get(i))) {
-                vaclist.add(students.get(i));
-                vcount++;
+                vaclist.add(students.get(i)); // if empty then add more students
+                vcount++; // increment count vacancy 
             }
         }
-        sortfinal();
+        sortfinal(); // calls function to fill seats in descending order
         for (int i = 0; i < vaclist.size(); i++) {
-            if( i == vacancies) {
+            if( i == vacancies) { //no of students == no of vacancies filled 
                 break;
-            }
+            } 
+            // print total vacancies, name of vacancy , unrescat
             System.out.println(vaclist.get(i).name
                 + "," + vaclist.get(i).total + ","
                 + vaclist.get(i).rescat);
         }
     }
-    public static void sortfinal() {
+    public static void sortfinal() { // i=n;
         for (int i = vaclist.size() - 1; i >= 0; i--) {
             Student max = vaclist.get(i);
-            int index = -1;
+            int index = -1; 
             for (int j = i - 1; j >= 0; j--) {
                 if (max.compareTo(vaclist.get(j)) == 1) {
                     max = vaclist.get(j);
@@ -131,22 +132,33 @@ final class Solution {
             Student temp = vaclist.get(i);
             vaclist.set(i, max);
             if (index != -1) {
-                vaclist.set(index, temp);
+                vaclist.set(index, temp); // check vacancies and allots marks then considers open category students
             }
         }
     }
     public static void selectionSort() {
-        for (int i = students.size() - 1; i >= 0; i--) {
+        for (int i = students.size() - 1; i >= 0; i--) { 
+            // iterate through the student list size to fill in descending order
             Student max = students.get(i);
+            // get max no of students and if 
             int index = -1;
+            //initialize index=-1 
             for (int j = i - 1; j >= 0; j--) {
+                /** compare students present, function call goes to 
+                compareTomethod() and their category **/
+
                 if (max.compareTo(students.get(j)) == 1) {
                     max = students.get(j);
-                    index = j;
+                    index = j; 
+                    /**calculates index of each student
+                    to store as rank 1, 2 .. so on **/
                 }
             }
             Student temp = students.get(i);
-            students.set(i, max);
+            /**creating temporary Student object to store vales of output 
+            i=-2, if compareTo !=1 then store i in temp
+            for negative result whenerver loop comes out **/
+            students.set(i, max); 
             if (index != -1) {
                 students.set(index, temp);
             }

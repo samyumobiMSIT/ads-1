@@ -92,6 +92,7 @@ if any of the reserved seats are left with out reserved candidates then fill the
         }
         
         /** All applicants are eligible for un reserved category seats **/
+        //res= reserved category
     if((other.rescat.equals("SC")
             || other.rescat.equals("ST") || other.rescat.equals("BC")
             && this.rescat.equals("Open"))) {
