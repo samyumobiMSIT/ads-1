@@ -1,0 +1,20 @@
+ P R I O * R * * I * T * Y * * * Q U E * * * U * E
+
+		P	R	I	O
+		I	O	P	R
+(*)	R	I	O	P	
+		I	O	P	R
+(**)	RRP	I	O		
+		I	I	O	
+(*)	RRPO	I	I		
+		I	I	T	
+(*)	RRPOT	I	I		
+		I	I	Y	
+(*)	RRPOTY	I	I		
+(***)	RRPOTYII				
+		Q	U	E	
+		E	Q	U	
+(***)	RRPOTYIIUQE				
+		U			
+(*)	RRPOTYIIUQEU				
+(*)		-			
