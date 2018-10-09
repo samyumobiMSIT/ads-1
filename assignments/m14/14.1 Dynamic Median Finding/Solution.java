@@ -8,8 +8,12 @@ import java.util.Collections;
 //    2) maxHeap.size() - 1 = minHeap.size()
 
 public class Solution {
-    private static PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder()); // keeps track of the SMALL numbers
-    private static PriorityQueue<Integer> minHeap = new PriorityQueue<>();                           // keeps track of the LARGE numbers
+    private static PriorityQueue<Integer> maxHeap = new 
+    PriorityQueue<>(Collections.reverseOrder()); 
+    // keeps track of the SMALL numbers
+    private static PriorityQueue<Integer> minHeap = new 
+    PriorityQueue<>();                         
+    // keeps track of the LARGE numbers
     
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -29,6 +33,10 @@ public class Solution {
         }
     }
     
+    /** Adds a number into the data structure.
+    If size of max heap is 2 more than min heap, extract maximum element from max heap and put it in min heap.
+    If size of min heap is 2 more than max heap, extract minimum element from min heap and put it in max heap.
+    **/
     private static void addNumber(int n) {
         if (maxHeap.isEmpty()) {
             maxHeap.add(n);
@@ -49,7 +57,7 @@ public class Solution {
         }
         // maxHeap will never have fewer elements than minHeap
     }
-    
+    // Returns the median of current data stream
     private static double getMedian() {
         if (maxHeap.isEmpty()) {
             return 0;
