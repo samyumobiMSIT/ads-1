@@ -1,0 +1,22 @@
+Starting audit...
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:10: Missing a Javadoc comment. [JavadocType]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:10:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:11: Line is longer than 80 characters (found 136). [LineLength]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:11:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:12: Line is longer than 80 characters (found 136). [LineLength]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:12:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:13: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:14:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:14:29: Parameter args should be final. [FinalParameters]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:17:12: 'int' is followed by whitespace. [NoWhitespaceAfter]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:24: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:25:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:25:38: Parameter array should be final. [FinalParameters]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:25:41: 'int' is followed by whitespace. [NoWhitespaceAfter]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:31: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:32:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:32:35: Parameter n should be final. [FinalParameters]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:52: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\ads-1\assignments\m14\14.1 Dynamic Median Finding\Solution.java:53:5: Missing a Javadoc comment. [JavadocMethod]
+Audit done.
+Checkstyle ends with 19 errors.
