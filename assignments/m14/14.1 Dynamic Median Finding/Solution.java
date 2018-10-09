@@ -12,10 +12,10 @@ import java.util.Collections;
     private static PriorityQueue<Integer> minHeap = new PriorityQueue<>();                         
     
     /**main Function **/
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
-        int [] array = new int[n];
+        int[] array = new int[n];
         for (int i = 0; i < n; i++) {
             array[i] = scan.nextInt();
         }
@@ -24,17 +24,21 @@ import java.util.Collections;
     }
     /** Computes the median.
     print median after adding elements to maxHeap & minHeap **/
-    public static void medianTracker(int [] array) {
+    // @array 
+    public static void medianTracker(final int[] array) {
         for (int i = 0; i < array.length; i++) {
             addNumber(array[i]);
             System.out.println(getMedian());
         }
     }
     
-    /** Adds a number into the data structure to balance minHeap and maxHeap.If size of max heap is 2 more than min heap,
+    /** Adds a number into the data structure to balance minHeap and maxHeap.
+    If size of max heap is 2 more than min heap,
     extract maximum element from max heap and put it in min heap.
-    If size of min heap is 2 more than max heap,extract minimum element from min heap and put it in max heap.
+    If size of min heap is 2 more than max heap,extract minimum element from 
+    min heap and put it in max heap.
     **/
+    // @n 
     private static void addNumber(final int n) {
         if (maxHeap.isEmpty()) {
             //if empty add numbers to maxHeap
@@ -56,8 +60,7 @@ import java.util.Collections;
                 //length of maxHeap > no of max elements in minHeap
                 minHeap.add(n);
             } else {
-                /** add elements to maxHeap, then remove 
-                from maxHeap and insert into minHeap **/
+                /** add elements to maxHeap, then remove from maxHeap and insert into minHeap **/
                 maxHeap.add(n); 
                 minHeap.add(maxHeap.remove());
             }
