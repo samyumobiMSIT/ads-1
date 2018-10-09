@@ -1,23 +1,21 @@
 import java.util.Scanner;
 import java.util.PriorityQueue;
 import java.util.Collections;
-
-// - We use 2 Heaps to keep track of median
-// - We make sure that 1 of the following conditions is always true:
-//    1) maxHeap.size() == minHeap.size()
-//    2) maxHeap.size() - 1 = minHeap.size()
-
+/** - We use 2 Heaps to keep track of median
+- We make sure that 1 of the following conditions is always true:
+1) maxHeap.size() == minHeap.size()
+ 2) maxHeap.size() - 1 = minHeap.size()
+**/
 public class Solution {
     /** maxHeap: 
     keeps track of the LARGE numbers **/
     private static PriorityQueue<Integer> maxHeap = new 
     PriorityQueue<>(Collections.reverseOrder()); 
-    /** minHeap: 
-    keeps track of the SMALL numbers **/
+    /** minHeap : keeps track of the SMALL numbers **/
     private static PriorityQueue<Integer> minHeap = new 
     PriorityQueue<>();                         
     
-    
+    /**main Function **/
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
@@ -41,7 +39,7 @@ public class Solution {
     If size of max heap is 2 more than min heap, extract maximum element from max heap and put it in min heap.
     If size of min heap is 2 more than max heap, extract minimum element from min heap and put it in max heap.
     **/
-    private static void addNumber(int n) {
+    private static void addNumber(final int n) {
         if (maxHeap.isEmpty()) {
             //if empty add numbers to maxHeap
             maxHeap.add(n);
