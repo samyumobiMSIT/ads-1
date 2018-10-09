@@ -1,14 +1,14 @@
 import java.util.Scanner;
 import java.util.PriorityQueue;
 import java.util.Collections;
-/** - We use 2 Heaps to keep track of median
-- We make sure that 1 of the following conditions is always true:
-1) maxHeap.size() == minHeap.size()
- 2) maxHeap.size() - 1 = minHeap.size()
+/** - We use 2 Heaps to keep track of median. 
+We make sure that 1 of the following conditions is always true.
+1) maxHeap.size() == minHeap.size().
+ 2) maxHeap.size() - 1 = minHeap.size().
 **/
-public class Solution {
-    /** maxHeap: 
-    keeps track of the LARGE numbers **/
+ class Solution {
+    /** maxHeap:
+    keeps track of the LARGE numbers and store in reverse order **/
     private static PriorityQueue<Integer> maxHeap = new 
     PriorityQueue<>(Collections.reverseOrder()); 
     /** minHeap : keeps track of the SMALL numbers **/
@@ -26,8 +26,8 @@ public class Solution {
         scan.close();
         medianTracker(array);
     }
-    /** Computes the median and print median after 
-    adding elements to maxHeap & minHeap **/
+    /** Computes the median.
+    print median after adding elements to maxHeap & minHeap **/
     public static void medianTracker(int [] array) {
         for (int i = 0; i < array.length; i++) {
             addNumber(array[i]);
@@ -35,9 +35,11 @@ public class Solution {
         }
     }
     
-    /** Adds a number into the data structure to balance minHeap and maxHeap
-    If size of max heap is 2 more than min heap, extract maximum element from max heap and put it in min heap.
-    If size of min heap is 2 more than max heap, extract minimum element from min heap and put it in max heap.
+    /** Adds a number into the data structure to balance minHeap and maxHeap.
+    If size of max heap is 2 more than min heap,
+    extract maximum element from max heap and put it in min heap.
+    If size of min heap is 2 more than max heap, 
+    extract minimum element from min heap and put it in max heap.
     **/
     private static void addNumber(final int n) {
         if (maxHeap.isEmpty()) {
@@ -49,8 +51,9 @@ public class Solution {
                  //length of array > no of min elements in minHeap
                 maxHeap.add(n);
             } else {
-                /** add elements to minHeap, then remove 
-                from minHeap and insert into maxHeap **/
+                /** add elements to minHeap.
+                then remove from minHeap.
+                insert into maxHeap **/
                 minHeap.add(n);
                 maxHeap.add(minHeap.remove());
             }
@@ -67,8 +70,8 @@ public class Solution {
         }
         // maxHeap will never have fewer elements than minHeap
     }
-    /**Returns the median of current data stream
-    median = (maxHeap elements + minHeap elements)  / 2**/
+    /**Returns the median of current data stream.
+    median = (maxHeap elements + minHeap elements)/ 2 **/
     private static double getMedian() {
         if (maxHeap.isEmpty()) {
             return 0;
