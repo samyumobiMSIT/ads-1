@@ -1,8 +1,8 @@
 Starting audit...
-[ERROR] D:\ads-1\assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:2: Missing a Javadoc comment. [JavadocType]
-[ERROR] D:\ads-1\assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:2:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
-[ERROR] D:\ads-1\assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:2:22: '{' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] D:\ads-1\assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:3:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] D:\ads-1\assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:3:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] D:\ads-1\assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:2: First sentence should end with a period. [JavadocStyle]
+[ERROR] D:\ads-1\assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:3:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
+[ERROR] D:\ads-1\assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:3:15: '{' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] D:\ads-1\assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:4:1: File contains tab characters (this is the first instance). [FileTabCharacter]
+[ERROR] D:\ads-1\assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:4:9: Missing a Javadoc comment. [JavadocMethod]
 Audit done.
 Checkstyle ends with 5 errors.
