@@ -1,6 +1,5 @@
 import java.util.NoSuchElementException;
 
-
 public class BinarySearchST<Key extends Comparable<Key>, Value> {
     private static final int INIT_CAPACITY = 2;
     private Key[] keys;
