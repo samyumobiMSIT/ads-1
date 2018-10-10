@@ -1,6 +1,8 @@
 import java.util.NoSuchElementException;
-
-public class BinarySearchST<Key extends Comparable<Key>, Value> {
+/**
+BST Class
+**/
+ class BinarySearchST<Key extends Comparable<Key>, Value> {
     private static final int INIT_CAPACITY = 2;
     private Key[] keys;
     private Value[] vals;
@@ -17,14 +19,11 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
      * Initializes an empty symbol table with the specified initial capacity.
      * @param capacity the maximum capacity
      */
-    public BinarySearchST(int capacity) { 
-        keys = (Key[]) new Comparable[capacity]; 
-        vals = (Value[]) new Object[capacity]; 
-    }   
-
-   
-
-    /**
+    public BinarySearchST(int capacity) {
+    	keys = (Key[]) new Comparable[capacity];
+    	vals = (Value[]) new Object[capacity]; 
+    }
+     /**
      * Returns the number of key-value pairs in this symbol table.
      *
      * @return the number of key-value pairs in this symbol table
