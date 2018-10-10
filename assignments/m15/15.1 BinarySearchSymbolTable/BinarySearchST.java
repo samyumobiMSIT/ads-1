@@ -172,6 +172,13 @@ BST Class
         return keys[n-1];
     }
 
+    void keys() {
+        for (int i = 0; i < n; i++) {
+            if (vals[i] != null) {
+                System.out.println(keys[i] + " " + vals[i]);
+            }
+        }
+    }
   
 
     /**
