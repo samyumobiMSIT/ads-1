@@ -1,0 +1,8 @@
+[master 09239ab] "ads1_m14_a2: 6/6 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 1/1 "
+ 7 files changed, 492 insertions(+), 453 deletions(-)
+ create mode 100644 assignments/m14/14.2 student reservation system/Heap.class
+ delete mode 100644 assignments/m14/14.2 student reservation system/InsertionSort.class
+ rewrite assignments/m14/14.2 student reservation system/Solution.java (74%)
+ rewrite assignments/m14/14.2 student reservation system/Student.class (95%)
+ rewrite assignments/m14/14.2 student reservation system/check_style_errors.txt (97%)
+ rewrite assignments/m14/14.2 student reservation system/git_output.txt (100%)
