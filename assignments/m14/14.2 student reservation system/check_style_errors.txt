@@ -1,13 +1,2 @@
 Starting audit...
-[ERROR] D:\ads-1\assignments\m14\14.2 student reservation system\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] D:\ads-1\assignments\m14\14.2 student reservation system\Solution.java:345:62: Parameter vacancies should be final. [FinalParameters]
-[ERROR] D:\ads-1\assignments\m14\14.2 student reservation system\Solution.java:346:36: Parameter unreservedSeats should be final. [FinalParameters]
-[ERROR] D:\ads-1\assignments\m14\14.2 student reservation system\Solution.java:346:57: Parameter bcSeats should be final. [FinalParameters]
-[ERROR] D:\ads-1\assignments\m14\14.2 student reservation system\Solution.java:347:36: Parameter scSeats should be final. [FinalParameters]
-[ERROR] D:\ads-1\assignments\m14\14.2 student reservation system\Solution.java:347:49: Parameter stSeats should be final. [FinalParameters]
-[ERROR] D:\ads-1\assignments\m14\14.2 student reservation system\Solution.java:364:57: Expression can be simplified. [SimplifyBooleanExpression]
-[ERROR] D:\ads-1\assignments\m14\14.2 student reservation system\Solution.java:373:57: Expression can be simplified. [SimplifyBooleanExpression]
-[ERROR] D:\ads-1\assignments\m14\14.2 student reservation system\Solution.java:382:57: Expression can be simplified. [SimplifyBooleanExpression]
-[ERROR] D:\ads-1\assignments\m14\14.2 student reservation system\Solution.java:392:52: Expression can be simplified. [SimplifyBooleanExpression]
 Audit done.
-Checkstyle ends with 10 errors.

@@ -2,208 +2,358 @@ import java.util.Scanner;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 /**
+ * This is a solution class.
+ */
+public final class Solution {
+    /**
+     * this is a default constructor.
+     */
+    private Solution() {
+
+    }
+
+    /**
+     * Client program.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = Integer.parseInt(scan.nextLine());
+        int vacancies = Integer.parseInt(scan.nextLine());
+        int noCategry = Integer.parseInt(scan.nextLine());
+        int noOfBC = Integer.parseInt(scan.nextLine());
+        int noOfSC = Integer.parseInt(scan.nextLine());
+        int noOfST = Integer.parseInt(scan.nextLine());
+
+        Student[] students = new Student[n];
+        for (int k = 0; k < n; k++) {
+            String[] tokens = scan.nextLine().split(",");
+            students[k] = new Student(
+                tokens[0], tokens[1], Integer.parseInt(tokens[2]),
+                Integer.parseInt(tokens[2 + 1]),
+                Integer.parseInt(tokens[2 + 2]),
+                Integer.parseInt(tokens[2 + 2 + 1]),
+                tokens[2 + 2 + 2]);
+        }
+
+        Heap.sort(students);
+        print(students);
+
+        allotment(students, vacancies, noCategry, noOfBC,
+                  noOfSC, noOfST);
+    }
+
+    /**
+     * prints the student details to the console.
+     *
+     * @param      students  list.
+     */
+    public static void print(final Student[] students) {
+        for (Student student : students) {
+            System.out.println(student);
+        }
+        System.out.println();
+    }
+
+    /**
+     * Alloting the seats to the students based on merit.
+     * @param students  list of students.
+     * @param vacancies number of vacancies.
+     * @param noCategry Un-reserved category.
+     * @param noBC      Number of BC seats.
+     * @param noSC      Number of SC seats.
+     * @param noST      Number of ST seats.
+     */
+    public static void allotment(final Student[] students,
+                                final int vacancies,
+                                final int noCategry,
+                                final int noBC,
+                                final int noSC,
+                                final int noST) {
+        int v = vacancies;
+        int n1 = noCategry;
+        int nb = noBC;
+        int ns = noSC;
+        int nt = noST;
+        int i = 0;
+        int k = 0;
+        int n = students.length;
+        Student[] alloted = new Student[v];
+
+        for (i = 0; i < n; i++) {
+            if (v == 0) {
+                break;
+            }
+
+            if (n1 > 0) {
+                n1--;
+                students[i].setAlloted(true);
+                alloted[k++] = students[i];
+                v--;
+            }
+
+            if (nb > 0) {
+                if (students[i].getRc().equals("BC")
+                    && !students[i].getAlloted()) {
+                    nb--;
+                    students[i].setAlloted(true);
+                    alloted[k++] = students[i];
+                    v--;
+                }
+            }
+
+            if (ns > 0) {
+                if (students[i].getRc().equals("SC")
+                    && !students[i].getAlloted()) {
+                    ns--;
+                    students[i].setAlloted(true);
+                    alloted[k++] = students[i];
+                    v--;
+                }
+            }
+
+            if (ns > 0) {
+                if (students[i].getRc().equals("ST")
+                    && !students[i].getAlloted()) {
+                    nt--;
+                    students[i].setAlloted(true);
+                    alloted[k++] = students[i];
+                    v--;
+                }
+            }
+        }
+
+        for (i = 0; i < n; i++) {
+            if (v > 0 && students[i].getRc().equals("Open")
+                && !students[i].getAlloted()) {
+                students[i].setAlloted(true);
+                alloted[k++] = students[i];
+                v--;
+            }
+        }
+
+        Heap.sort(alloted);
+        print(alloted);
+    }
+}
+/**
  * Class for student.
  */
 class Student implements Comparable<Student> {
     /**
-     * {Name of the student}.
+     * student name variable.
      */
     private String studentName;
     /**
-     * {Date of birth}.
+     * date variable.
      */
-    private Date dob;
+    private Date db;
     /**
-     * {Marks in subject1}.
+     * for marks1 variable.
      */
-    private int marks1;
+    private int m1;
     /**
-     * {Marks in subject2}.
+     * for marks2 variable.
      */
-    private int marks2;
+    private int m2;
     /**
-     * {Marks in subject3}.
+     * for mark3 variable.
      */
-    private int marks3;
+    private int m3;
     /**
-     * {Total marks}.
+     * for total marks variable.
      */
-    private int totalmarks;
+    private int tm;
     /**
-     * {Category}.
+     * for reservation variable.
      */
-    private String category;
+    private String rc;
     /**
-     * {Student gets admission (or) not}.
+     * Seats allocated variable.
      */
-    private boolean allocation;
+    private boolean alloted;
     /**
-     * Constructs the object.
+     * returns true, if the student is already alloted,
+     * otherwise false.
      *
-     * @param      name  The name
-     * @param      dob1  The dob1
-     * @param      m1    The m1
-     * @param      m2    The m2
-     * @param      m3    The m3
-     * @param      t     {Total marks}
-     * @param      cat   The category
+     * @return true if alloted, otherwise false.
      */
-    Student(final String name, final String dob1, final int m1,
-            final int m2, final int m3, final int t, final String cat) {
-        this.studentName = name;
-        SimpleDateFormat sd = new SimpleDateFormat("dd-MM-yyyy");
+    public boolean getAlloted() {
+        return alloted;
+    }
+
+    /**
+     * Changes the alloted status to true once the allotment is done.
+     *
+     * @param      allot  should be either true or false.
+     */
+    public void setAlloted(final boolean allot) {
+        this.alloted = allot;
+    }
+
+    /**
+     * Gets the data of birth.
+     * @return date of birth.
+     */
+    public Date getDb() {
+        return db;
+    }
+
+    /**
+     * sets the student's date of birth.
+     *
+     * @param      b     [description]
+     */
+    public void setDb(final Date b) {
+        this.db = b;
+    }
+
+    /**
+     * gets the date of birth.
+     *
+     * @return     the student's date of birth.
+     */
+    public String getRc() {
+        return rc;
+    }
+
+    /**
+     * Sets the student's reservation category.
+     *
+     * @param      r     { parameter_description }
+     */
+    public void setRc(final String r) {
+        this.rc = r;
+    }
+
+    /**
+     * gets the total marks.
+     * @return returns the total marks of the student.
+     */
+    public int getTm() {
+        return tm;
+    }
+
+    /**
+     * sets the student's total marks.
+     *
+     * @param      m     { parameter_description }
+     */
+    public void setTm(final int m) {
+        this.tm = m;
+    }
+
+    /**
+     * Constructs the object based on the parameters.
+     *
+     * @param      stuName      Student Name
+     * @param      dateOfBirth  Date of Birth
+     * @param      mm1          Marks in first subject.
+     * @param      mm2          Marks in second subject.
+     * @param      mm3          Marks in third subject.
+     * @param      total        The total
+     * @param      res          The resource
+     */
+    Student(final String stuName, final String dateOfBirth,
+                   final int mm1, final int mm2, final int mm3, final int total,
+                   final String res) {
+        this.studentName = stuName;
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         try {
-            this.dob = sd.parse(dob1);
-        } catch (Exception e) {
-            e.printStackTrace();
+            this.db = sdf.parse(dateOfBirth);
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
-        this.marks1 = m1;
-        this.marks2 = m2;
-        this.marks3 = m3;
-        this.totalmarks = t;
-        this.category = cat;
-        this.allocation = false;
+        this.m1 = mm1;
+        this.m2 = mm2;
+        this.m3 = mm3;
+        this.tm = total;
+        this.rc = res;
+        this.alloted = false;
     }
+
     /**
-     * Gets the allocation.
-     * Time complexity of this method is O(1).
-     * @return     The allocation.
-     */
-    public boolean getAllocation() {
-        return this.allocation;
-    }
-    /**
-     * Sets the allocation.
-     * Time complexity of this method is O(1).
-     * @param      allot  The allot
-     */
-    public void setAllocation(final boolean allot) {
-        this.allocation = allot;
-    }
-    /**
-     * Gets the student name.
-     * Time complexity of this method is O(1).
-     * @return     The student name.
-     */
-    public String getStudentName() {
-        return this.studentName;
-    }
-    /**
-     * Sets the student name.
-     * Time complexity of this method is O(1).
-     * @param      student1  The student1
-     */
-    public void setStudentName(final String student1) {
-        this.studentName = student1;
-    }
-    /**
-     * Gets the m1.
-     * Time complexity of this method is O(1).
-     * @return     The m1.
-     */
-    public int getM1() {
-        return this.marks1;
-    }
-    /**
-     * Sets the m1.
-     * Time complexity of this method is O(1).
-     * @param      mark1  The mark 1
-     */
-    public void setM1(final int mark1) {
-        this.marks1 = mark1;
-    }
-    /**
-     * Gets the m2.
-     * Time complexity of this method is O(1).
-     * @return     The m 2.
-     */
-    public int getM2() {
-        return this.marks2;
-    }
-    /**
-     * Sets the m2.
-     * Time complexity of this method is O(1).
-     * @param      mark2  The mark 2
-     */
-    public void setM2(final int mark2) {
-        this.marks2 = mark2;
-    }
-    /**
-     * Gets the m3.
-     * Time complexity of this method is O(1).
-     * @return     The m 3.
+     * Gets the marks in subject 3.
+     *
+     * @return     m3 Marks in subject 3.
      */
     public int getM3() {
-        return this.marks3;
+        return m3;
     }
+
     /**
-     * Sets the m3.
-     * Time complexity of this method is O(1).
-     * @param      mark3  The mark 3
-     */
-    public void setM3(final int mark3) {
-        this.marks3 = mark3;
-    }
-    /**
-     * Gets the dob.
-     * Time complexity of this method is O(1).
-     * @return     The dob.
-     */
-    public Date getDOB() {
-        return this.dob;
-    }
-    /**
-     * Sets the dob.
-     * Time complexity of this method is O(1).
-     * @param      d     {Date object}
-     */
-    public void setDOB(final Date d) {
-        this.dob = d;
-    }
-    /**
-     * Gets the reservation.
-     * Time complexity of this method is O(1).
-     * @return     The reservation.
-     */
-    public String getReservation() {
-        return this.category;
-    }
-    /**
-     * Sets the category.
-     * Time complexity of this method is O(1).
-     * @param      c     {String}
-     */
-    public void setCategory(final String c) {
-        this.category = c;
-    }
-    /**
-     * Gets the total.
-     * Time complexity of this method is O(1).
-     * @return     The total.
-     */
-    public int getTotal() {
-        return this.totalmarks;
-    }
-    /**
-     * Sets the total.
-     * Time complexity of this method is O(1).
-     * @param      tm    The time
-     */
-    public void setTotal(final int tm) {
-        this.totalmarks = tm;
-    }
-    /**
-     * {Method to compare two objects}
-     * Time complexity of this method is O(1).
-     * @param      that  The that
+     * Sets the m3 to the 3rd subject.
      *
-     * @return     {Integer}
+     * @param      m     { parameter_description }
+     */
+    public void setM3(final int m) {
+        this.m3 = m;
+    }
+
+    /**
+     * Gets the marks in subject 2.
+     *
+     * @return     marks in subject 2.
+     */
+    public int getM2() {
+        return m2;
+    }
+
+    /**
+     * Sets marks in subject 2.
+     *
+     * @param      m     { parameter_description }
+     */
+    public void setM2(final int m) {
+        this.m2 = m;
+    }
+
+    /**
+     * Gets the marks in subject 1.
+     * @return marks in subject 1.
+     */
+    public int getM1() {
+        return m1;
+    }
+
+    /**
+     * Sets the marks to subject 1.
+     *
+     * @param      m     { parameter_description }
+     */
+    public void setM1(final int m) {
+        this.m1 = m;
+    }
+
+    /**
+     * Gets the student name.
+     * @return the student's name.
+     */
+    public String getStudentName() {
+        return studentName;
+    }
+
+    /**
+     * When required the student's name can be updated.
+     *
+     * @param      student  The student
+     */
+    public void setStudentName(final String student) {
+        this.studentName = student;
+    }
+
+    /**
+     * Compares two objects of types students.
+     * @param  that second Student.
+     * @return integer based on the requirements.
      */
     public int compareTo(final Student that) {
-        if (this.getTotal() > that.getTotal()) {
+        if (this.getTm() > that.getTm()) {
             return -1;
         }
-        if (this.getTotal() < that.getTotal()) {
+        if (this.getTm() < that.getTm()) {
             return 1;
         }
         if (this.getM3() > that.getM3()) {
@@ -215,187 +365,126 @@ class Student implements Comparable<Student> {
         if (this.getM2() > that.getM2()) {
             return -1;
         }
-        if (this.getDOB().compareTo(that.getDOB()) < 0) {
+        if (this.getM2() < that.getM2()) {
             return 1;
         }
-        if (this.getDOB().compareTo(that.getDOB()) > 0) {
+        if (this.getDb().compareTo(that.getDb()) < 0) {
+            return 1;
+        }
+        if (this.getDb().compareTo(that.getDb()) > 0) {
             return -1;
         }
         return 0;
     }
+
     /**
-     * Returns a string representation of the object.
-     * Time complexity of this method is O(N).
-     * @return     String representation of the object.
+     * Gets the String version of the Students.
+     * @return String version of object.
      */
     public String toString() {
         StringBuffer sb = new StringBuffer();
         sb.append(this.getStudentName() + ",");
-        sb.append(this.getTotal() + ",");
-        sb.append(this.getReservation());
+        sb.append(this.getTm() + ",");
+        sb.append(this.getRc());
         return sb.toString();
     }
 }
-/**
- * Class for insertion sort.
- */
-final class InsertionSort {
-    /**
-     * Constructs the object.
-     */
-    private InsertionSort() {
-        //Unused Constructor.
-    }
-    /**
-     * {Method to find which among the two is less}.
-     *
-     * @param      v     {Comparable object}
-     * @param      w     {Comparable object}
-     * Time complexity of this method is O(1).
-     * @return     {Boolean value}
-     */
-    private static boolean less(final Comparable v, final Comparable w) {
-        return v.compareTo(w) < 0;
-    }
-    /**
-     * {Method to exchange two objects}.
-     * Time complexity of this method is O(N).
-     * @param      a     {Comparable array}
-     * @param      i     {Integer i}
-     * @param      j     {Integer j}
-     */
-    private static void exch(final Comparable[] a, final int i, final int j) {
-        Comparable temp = a[i];
-        a[i] = a[j];
-        a[j] = temp;
-    }
-    /**
-     * {Method for insertion sort}.
-     * Time complexity of this method is O(N^2).
-     * @param      a     {Comparable array}
-     */
-    public static void sort(final Comparable[] a) {
-        for (int i = 0; i < a.length; i++) {
-            for (int j = i; j > 0 && less(a[j], a[j - 1]); j--) {
-                exch(a, j, j - 1);
-            }
-        }
-    }
-}
-/**
- * Class for solution.
- */
-public final class Solution {
-    /**
-     * Constructs the object.
-     */
-    private Solution() {
-        //Unused Constructor.
-    }
-    /**
-     * {Client Program}.
-     *
-     * @param      args  The arguments
-     */
-    public static void main(final String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int n = Integer.parseInt(scan.nextLine());
-        int vacancies = Integer.parseInt(scan.nextLine());
-        int unreservedSeats = Integer.parseInt(scan.nextLine());
-        int bcSeats = Integer.parseInt(scan.nextLine());
-        int scSeats = Integer.parseInt(scan.nextLine());
-        int stSeats = Integer.parseInt(scan.nextLine());
 
-        Student[] students = new Student[n];
-        for (int k = 0; k < n; k++) {
-            String[] tokens = scan.nextLine().split(",");
-            students[k] = new Student(tokens[0], tokens[1],
-                                      Integer.parseInt(tokens[2]),
-                                      Integer.parseInt(tokens[2 + 1]),
-                                      Integer.parseInt(tokens[2 + 2]),
-                                      Integer.parseInt(tokens[2 + 2 + 1]),
-                                      tokens[2 + 2 + 2]);
+/**
+ * This is a Class for heap.
+ */
+final class Heap {
+    /**
+     * Constructs the object.
+     */
+    private Heap() {
+    /**
+     * empty constructer.
+     */
+    }
+
+    /**
+     * Rearranges the array in ascending order, using the natural order.
+     * Time complexity is N log N.
+     *
+     * @param      pq    the array to be sorted
+     */
+    public static void sort(final Comparable[] pq) {
+        int n = pq.length;
+        for (int k = n / 2; k >= 1; k--) {
+            sink(pq, k, n);
         }
-        InsertionSort.sort(students);
-        print(students);
-        counselling(students, vacancies,
-                    unreservedSeats, bcSeats, scSeats, stSeats);
+        while (n > 1) {
+            exch(pq, 1, n--);
+            sink(pq, 1, n);
+        }
     }
     /**
-     * {Method to print}.
-     * Time complexity of this method is O(N).
-     * @param      s     {Student array}
+     * to sink the values.
+     * Time complexity is log N.
+     *
+     * @param      pq    { parameter_description }
+     * @param      k     { int value }
+     * @param      n     { int value }
      */
-    public static void print(final Student[] s) {
-        for (Student stu : s) {
-            System.out.println(stu);
-        }
-        System.out.println();
-    }
-    /**
-     * {Method for counselling}.
-     * Time complexity of this method is O(N^2).
-     * @param      students         The students
-     * @param      vacancies        The vacancies
-     * @param      unreservedSeats  The unreserved seats
-     * @param      bcSeats          The bc seats
-     * @param      scSeats          The screen seats
-     * @param      stSeats          The st seats
-     */
-    public static void counselling(final Student[] students, int vacancies,
-                                   int unreservedSeats, int bcSeats,
-                                   int scSeats, int stSeats) {
-        int i = 0;
-        int k = 0;
-        int n = students.length;
-        Student[] alloted = new Student[vacancies];
-        for (i = 0; i < n; i++) {
-            if (vacancies == 0) {
+    private static void sink(final Comparable[] pq, final int k, final int n) {
+        int l = k;
+        while (2 * l <= n) {
+            int j = 2 * l;
+            if (j < n && less(pq, j, j + 1)) {
+                j++;
+            }
+            if (!less(pq, l, j)) {
                 break;
             }
-            if (unreservedSeats > 0) {
-                unreservedSeats--;
-                students[i].setAllocation(true);
-                alloted[k++] = students[i];
-                vacancies--;
-            }
-            if (bcSeats > 0) {
-                if (students[i].getReservation().equals("BC")
-                        &&  students[i].getAllocation() == false) {
-                    bcSeats--;
-                    students[i].setAllocation(true);
-                    alloted[k++] = students[i];
-                    vacancies--;
-                }
-            }
-            if (scSeats > 0) {
-                if (students[i].getReservation().equals("SC")
-                        &&  students[i].getAllocation() == false) {
-                    scSeats--;
-                    students[i].setAllocation(true);
-                    alloted[k++] = students[i];
-                    vacancies--;
-                }
-            }
-            if (stSeats > 0) {
-                if (students[i].getReservation().equals("ST")
-                        &&  students[i].getAllocation() == false) {
-                    stSeats--;
-                    students[i].setAllocation(true);
-                    alloted[k++] = students[i];
-                    vacancies--;
-                }
-            }
+            exch(pq, l, j);
+            l = j;
         }
-        for (i = 0; i < n; i++) {
-            if (vacancies > 0 && students[i].getReservation().equals("Open")
-                    && students[i].getAllocation() == false) {
-                students[i].setAllocation(true);
-                alloted[k++] = students[i];
-                vacancies--;
-            }
+    }
+
+    /**
+     * to compare the values.
+     * Time complexity is 1.
+     *
+     * @param      pq    { parameter_description }
+     * @param      i     { int value }
+     * @param      j     { int value }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    private static boolean less(final Comparable[] pq, final int i,
+        final int j) {
+        return pq[i - 1].compareTo(pq[j - 1]) < 0;
+    }
+
+    /**
+     * to exchange the values.
+     * Time complexity is N.
+     *
+     * @param      pq    { parameter_description }
+     * @param      i     { int value }
+     * @param      j     { int value }
+     */
+    private static void exch(final Object[] pq, final int i, final int j) {
+        Object swap = pq[i - 1];
+        pq[i - 1] = pq[j - 1];
+        pq[j - 1] = swap;
+    }
+
+    /**
+     * to display the data.
+     * Time complexity is N.
+     *
+     * @param      a     { comparable value }
+     */
+    private static void show(final Comparable[] a) {
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i]);
         }
-        InsertionSort.sort(alloted);
-        print(alloted);
     }
 }
+
+
+
+
+
