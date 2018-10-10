@@ -1,0 +1,39 @@
+warning: LF will be replaced by CRLF in assignments/m14/14.2 student reservation system/testcases/problem_id.txt.
+The file will have its original line endings in your working directory.
+[master bdc5c1c] "ads1_m14_a2: 6/6 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 0/1 "
+ 34 files changed, 1222 insertions(+)
+ create mode 100644 assignments/m14/14.2 student reservation system/InsertionSort.class
+ create mode 100644 assignments/m14/14.2 student reservation system/Solution.class
+ create mode 100644 assignments/m14/14.2 student reservation system/Solution.java
+ create mode 100644 assignments/m14/14.2 student reservation system/Student.class
+ create mode 100644 assignments/m14/14.2 student reservation system/check_style_errors.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/git_output.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/md5/input000.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/md5/input001.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/md5/input002.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/md5/input003.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/md5/input004.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/md5/input005.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/md5/output000.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/md5/output001.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/md5/output002.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/md5/output003.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/md5/output004.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/md5/output005.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/md5/problem_id.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/readme.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/testcases/input000.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/testcases/input001.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/testcases/input002.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/testcases/input003.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/testcases/input004.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/testcases/input005.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/testcases/output000.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/testcases/output001.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/testcases/output002.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/testcases/output003.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/testcases/output004.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/testcases/output005.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/testcases/problem_id.txt
+ create mode 100644 assignments/m14/14.2 student reservation system/testcases_output.txt
+fatal: The remote end hung up unexpectedly

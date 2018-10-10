@@ -1,0 +1,4 @@
+[master cf4ee9e] "ads1_m14_a1: 4/4 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 0/1 "
+ 4 files changed, 22 insertions(+), 22 deletions(-)
+ rewrite assignments/m14/14.1 Dynamic Median Finding/result/score.json (70%)
+fatal: unable to access 'https://github.com/samyumobiMSIT/ads-1.git/': Failed to connect to github.com port 443: Timed out

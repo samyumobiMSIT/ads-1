@@ -69,6 +69,7 @@ import java.util.Collections;
     }
     /**Returns the median of current data stream.
     median = (maxHeap elements + minHeap elements)/ 2 **/
+    @return
     private static double getMedian() {
         if (maxHeap.isEmpty()) {
             return 0;
