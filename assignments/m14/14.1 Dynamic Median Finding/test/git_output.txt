@@ -1,0 +1,9 @@
+[master 5c668d9] "ads1_m14_a1: 4/4 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 0/1 "
+ 8 files changed, 402311 insertions(+), 305 deletions(-)
+ create mode 100644 assignments/m14/14.1 Dynamic Median Finding/test/MaxPQ.class
+ create mode 100644 assignments/m14/14.1 Dynamic Median Finding/test/MinPQ.class
+ rewrite assignments/m14/14.1 Dynamic Median Finding/test/MinPQ.java (92%)
+ create mode 100644 assignments/m14/14.1 Dynamic Median Finding/test/Solution.class
+ create mode 100644 assignments/m14/14.1 Dynamic Median Finding/test/check_style_errors.txt
+ create mode 100644 assignments/m14/14.1 Dynamic Median Finding/test/git_output.txt
+ create mode 100644 assignments/m14/14.1 Dynamic Median Finding/test/testcases_output.txt
