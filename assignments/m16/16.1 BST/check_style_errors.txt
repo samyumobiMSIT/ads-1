@@ -1,0 +1,12 @@
+Starting audit...
+[ERROR] D:\ads-1\assignments\m16\16.1 BST\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] D:\ads-1\assignments\m16\16.1 BST\Solution.java:6:1: File contains tab characters (this is the first instance). [FileTabCharacter]
+[ERROR] D:\ads-1\assignments\m16\16.1 BST\Solution.java:17:33: Parameter args should be final. [FinalParameters]
+[ERROR] D:\ads-1\assignments\m16\16.1 BST\Solution.java:19: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\ads-1\assignments\m16\16.1 BST\Solution.java:24: Line is longer than 80 characters (found 111). [LineLength]
+[ERROR] D:\ads-1\assignments\m16\16.1 BST\Solution.java:24:107: '3' is a magic number. [MagicNumber]
+[ERROR] D:\ads-1\assignments\m16\16.1 BST\Solution.java:25:77: '4' is a magic number. [MagicNumber]
+[ERROR] D:\ads-1\assignments\m16\16.1 BST\Solution.java:29: Line is longer than 80 characters (found 102). [LineLength]
+[ERROR] D:\ads-1\assignments\m16\16.1 BST\Solution.java:29:98: '3' is a magic number. [MagicNumber]
+Audit done.
+Checkstyle ends with 9 errors.
