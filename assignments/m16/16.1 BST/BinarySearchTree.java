@@ -29,6 +29,8 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
 	 *
 	 * @param      key    The key
 	 * @param      value  The value
+	 * 
+	 * Requires O(N) complexity
 	 */
 	public void put(Book key, int value) {
 		 root = put(root, key, value);
@@ -64,6 +66,8 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
 	 * @param      key   The key
 	 *
 	 * @return     { returns integer value }
+	 *
+	 * Complexity BST get(): O(N) 
 	 */
 	public Integer get(Book key) {
 		Node x = root;
