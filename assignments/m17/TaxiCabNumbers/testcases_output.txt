@@ -2,29 +2,34 @@
 Expected Output: 
 1729
 Your Output: 
-Missing or invalid parameter!
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at Taxicab.main(Taxicab.java:32)
 ----------------------------------------
 ########## Testcase 1: Failed ##########
 Expected Output: 
 4673088
 Your Output: 
-Missing or invalid parameter!
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at Taxicab.main(Taxicab.java:32)
 ----------------------------------------
 ########## Testcase 2: Failed ##########
 Expected Output: 
 86488136
 Your Output: 
-Missing or invalid parameter!
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at Taxicab.main(Taxicab.java:32)
 ----------------------------------------
 ########## Testcase 3: Failed ##########
 Expected Output: 
 87539319
 Your Output: 
-Missing or invalid parameter!
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at Taxicab.main(Taxicab.java:32)
 ----------------------------------------
 ########## Testcase 4: Failed ##########
 Expected Output: 
 143604279
 Your Output: 
-Missing or invalid parameter!
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at Taxicab.main(Taxicab.java:32)
 ----------------------------------------
