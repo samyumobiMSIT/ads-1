@@ -1,8 +1,9 @@
 import java.util.PriorityQueue;
+import java.util.Scanner;
  
 public class Taxicab implements Comparable<Taxicab> {
  
-  private final long sum;
+  private final long sum; 
   private final int i;
   private final int j;
  
@@ -30,10 +31,11 @@ public class Taxicab implements Comparable<Taxicab> {
   public static void main(String[] args) {
  
     int N = Integer.parseInt(args[0]);
- 
+    //Scanner sc = new Scanner(System.in);
     // initialize priority queue
     PriorityQueue<Taxicab> pq = new PriorityQueue<Taxicab>();
-    for (int i = 1; i <= N; i++) {
+    // int i = scan.nextInt();
+    for (int i=1; i <= N; i++) {
       pq.add(new Taxicab(i, i));
     }
  
