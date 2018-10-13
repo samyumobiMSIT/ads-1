@@ -1,5 +1,13 @@
 /**
  * Class for Insertion sort.
+   **
+     * to perform insertion sort
+     * Time Complexities .
+     * Best - O(N)
+     * Worst - O(N)
+     * Average - O(N)
+     *
+     *
  */
 class InsertionSort {
 	/**

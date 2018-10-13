@@ -20,8 +20,9 @@ public final class Solution {
      * Representing THREE as 3.
      */
     private static final int THREE = 3;
-    /**.
-     * { main function }
+    /**
+     * main function to read input.
+     * Time Complexity : O(N) (while loop).
      *
      * @param      args  The arguments
      */
@@ -43,6 +44,14 @@ public final class Solution {
              Integer.parseInt(tokens[2]), Integer.parseInt(tokens[THREE]));
             count++;
         }
+        /**
+     * method to perform selection sort
+     * Time Complexities .
+     * Best - O(N)
+     * Worst - O(N)
+     * Average - O(N)
+     *
+     */
         Selectionsort ss = new Selectionsort();
         ss.sort(teamsArray);
         System.out.println(Arrays.toString(teamsArray).replace(" ", "")

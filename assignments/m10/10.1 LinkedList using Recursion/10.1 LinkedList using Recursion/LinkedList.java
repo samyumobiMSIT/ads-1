@@ -106,10 +106,14 @@ class LinkedList {
         }
     }
     /**
-     * insert data at paticular position.
+     * { Inserts the element at given index position }.
      *
-     * @param      position  The position
-     * @param      value     The value
+     * @param      index      The index is inetger type
+     * @param      data       The data
+     *
+     * @throws     Exception  { Throws exception if index is invalid }
+     * Time complexity is O(N) because in worst case, it may have
+     * to recurse entire linked list
      */
     public void insertAt(final int position, final int value) {
         insertAt(head, position, value);
@@ -139,8 +143,12 @@ class LinkedList {
         index++;
         insertAt(headptr.next, position, value);
     }
-    /**
-     * reverses the linked list.
+   /**
+     * { Reverse public method to call reverse recursive method }.
+     *
+     * @throws     Exception  { throws exception if linked list if empty }
+     * Time complexity of this method is O(1) because
+     * it just calls the reverse recursive method
      */
     public void reverse() {
         head = reverseRecursive(head);

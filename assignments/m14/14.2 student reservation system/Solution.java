@@ -113,7 +113,7 @@ public final class Solution {
                 }
             }
 
-            if (ns > 0) {
+            if (nt > 0) {
                 if (students[i].getRc().equals("ST")
                     && !students[i].getAlloted()) {
                     nt--;

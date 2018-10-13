@@ -1,10 +1,13 @@
 class Heap<E extends Comparable<E>> {
-    /**
-     * Determines if minimum heap.
-     * { time complexity to check whther it is minheap or not is O(n) }
-     * @param      arr   The arr
+     /**
+     * Determines if heap.
+     *  Best case: O(1)
+     *  worst case :O(n)
+     *  Average case: O(n)
      *
-     * @return     True if minimum heap, False otherwise.
+     * @param      a     { parameter_description }
+     *
+     * @return     True if heap, False otherwise.
      */
     public boolean isMinHeap(final E[] arr) {
         int index = arr.length - 1;

@@ -44,25 +44,27 @@ BST Class
 
 
     /**
-     * Does this symbol table contain the given key?
+     * contains.
+     * Best case: O(1)
+     * Worst case: O(logN)
+     * Average case: O(logN)
+     * @param      key   The key
      *
-     * @param  key the key
-     * @return {@code true} if this symbol table contains {@code key} and
-     *         {@code false} otherwise
-     * @throws IllegalArgumentException if {@code key} is {@code null}
+     * @return     { description_of_the_return_value }
      */
     public boolean contains(Key key) {
         if (key == null) throw new IllegalArgumentException("argument to contains() is null");
         return get(key) != null;
     }
 
-    /**
-     * Returns the value associated with the given key in this symbol table.
+     /**
+     * gets function.
+     * Best case: O(1)
+     * Worst case: O(logN)
+     * Average case: O(logN)
+     * @param      key   The key
      *
-     * @param  key the key
-     * @return the value associated with the given key if the key is in the symbol table
-     *         and {@code null} if the key is not in the symbol table
-     * @throws IllegalArgumentException if {@code key} is {@code null}
+     * @return     { description_of_the_return_value }
      */
     public Value get(Key key) {
         if (key == null) throw new IllegalArgumentException("argument to get() is null"); 
@@ -72,12 +74,14 @@ BST Class
         return null;
     } 
 
-    /**
-     * Returns the number of keys in this symbol table strictly less than {@code key}.
+   /**
+     * rank.
+     * Best case: O(1)
+     * Worst case: O(logN)
+     * Average case: O(logN)
+     * @param      key   The key
      *
-     * @param  key the key
-     * @return the number of keys in the symbol table strictly less than {@code key}
-     * @throws IllegalArgumentException if {@code key} is {@code null}
+     * @return     { description_of_the_return_value }
      */
     public int rank(Key key) {
         if (key == null) throw new IllegalArgumentException("argument to rank() is null"); 
@@ -94,9 +98,13 @@ BST Class
     } 
     
 
-    /* @param  key the key
-     * @param  val the value
-     * @throws IllegalArgumentException if {@code key} is {@code null}
+    /**
+     * inserts a key-value pair.
+     * Best case: O(1)
+     * Worst case: O(N)
+     * Average case: O(N)
+     * @param      key    The key
+     * @param      value  The value
      */
     public void put(Key key, Value val)  {
         if (key == null) throw new IllegalArgumentException("first argument to put() is null"); 
@@ -125,12 +133,12 @@ BST Class
 
      } 
 
-    /**
-     * Removes the specified key and associated value from this symbol table
-     * (if the key is in the symbol table).
-     *
-     * @param  key the key
-     * @throws IllegalArgumentException if {@code key} is {@code null}
+   /**
+     * deletes.
+     * Best case: O(1)
+     * Worst case: O(N)
+     * Average case: O(N)
+     * @param      key   The key
      */
     public void delete(Key key) {
         if (key == null) throw new IllegalArgumentException("argument to delete() is null"); 
@@ -157,15 +165,22 @@ BST Class
     } 
 
     /**
-     * Removes the smallest key and associated value from this symbol table.
-     *
-     * @throws NoSuchElementException if the symbol table is empty
+     * deletes min value.
+     * Best case: O(1)
+     * Worst case: O(N)
+     * Average case: O(N)
      */
     public void deleteMin() {
         if (isEmpty()) throw new NoSuchElementException("Symbol table underflow error");
         delete(keys[0]);
     }
-
+    /**
+     * max.
+     * Best case: O(1)
+     * Worst case: O(1)
+     * Average case: O(1)
+     * @return     { description_of_the_return_value }
+     */
    
     public Key max() {
         if (isEmpty()) throw new NoSuchElementException("called max() with empty symbol table");
@@ -181,13 +196,14 @@ BST Class
     }
   
 
-    /**
-     * Returns the largest key in this symbol table less than or equal to {@code key}.
+     /**
+     * floor.
+     * Best case: O(1)
+     * Worst case: O(logN)
+     * Average case: O(logN)
+     * @param      key   The key
      *
-     * @param  key the key
-     * @return the largest key in this symbol table less than or equal to {@code key}
-     * @throws NoSuchElementException if there is no such key
-     * @throws IllegalArgumentException if {@code key} is {@code null}
+     * @return     { description_of_the_return_value }
      */
     public Key floor(Key key) {
         if (key == null) throw new IllegalArgumentException("argument to floor() is null"); 

@@ -1,3 +1,14 @@
+/**
+     * To perform selection sort.
+     *
+     * @param      team  The teams
+     * @param      size   The size
+     *
+     * @return     sorted array of team objects
+     * Time complexity of This method is O(N^2)
+     *  because we are using nested for loops
+     *   in worst case it may go up to O(N^2)
+     */
 public static void selectionSort() {
         for (int i = students.size() - 1; i >= 0; i--) {
             Student max = students.get(i);

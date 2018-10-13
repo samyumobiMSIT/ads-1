@@ -20,8 +20,9 @@ public final class Solution {
      * Representing THREE as 3.
      */
     private static final int THREE = 3;
-    /**.
-     * { main function }
+    /**
+     * main function to read input.
+     * Time Complexity : O(N) (while loop).
      *
      * @param      args  The arguments
      */
