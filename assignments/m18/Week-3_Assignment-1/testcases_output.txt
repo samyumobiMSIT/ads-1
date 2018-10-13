@@ -442,13 +442,12 @@ Tasty Bite Eat 0.23
 WABCO India 0.33
 
 [get, maxST, Merck Ltd]
-inside get
+
 [get, maxST, Bharat Rasayan]
-inside get
+
 [get, minST, Bharat Rasayan]
-inside get
+
 [get, minST, WABCO India]
-inside get
 ----------------------------------------
 ########## Testcase 3: Failed ##########
 Expected Output: 
@@ -602,13 +601,12 @@ Vinati Organics 1.03
 Chola Inv Fin 1.47
 
 [get, minST, Chola Inv Fin]
-inside get
+
 [get, minST, TCS]
-inside get
+
 [get, maxST, Chola Inv Fin]
-inside get
+
 [get, maxST, TCS]
-inside get
 ----------------------------------------
 ########## Testcase 4: Failed ##########
 Expected Output: 
@@ -777,21 +775,20 @@ Tasty Bite Eat 0.23
 WABCO India 0.33
 
 [get, minST, HEG Ltd]
-inside get
+
 [get, minST, ICRA]
-inside get
+
 [get, maxST, Abbott]
-inside get
+
 [get, maxST, Nestle India]
-inside get
+
 [get, minST, 3M India]
-inside get
+
 [get, minST, Merck Ltd]
-inside get
+
 [get, maxST, MRF]
-inside get
+
 [get, maxST, Sanofi India]
-inside get
+
 [intersection]
-inside intersection
 ----------------------------------------
