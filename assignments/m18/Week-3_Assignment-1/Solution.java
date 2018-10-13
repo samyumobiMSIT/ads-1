@@ -1,69 +1,83 @@
 import java.util.Scanner;
-class Stock implements Comparable<Stock> {
-	private String stockname;
-	private float stockchange;
-	Stock(String name, float change) {
-		this.stockname = name;
-		this.stockchange = change;
+class Stock implements Comparable <Stock> {
+	private String ticker;
+	private float change;
+	Stock(final String name, final float percent) {
+		this.ticker = name;
+		this.change = percent;
 	}
-	public String getstockname() {
-		return this.stockname;
+	public String getName() {
+		return this.ticker;
 	}
-	public float getstockchange() {
-		return this.stockchange;
+	public float getChange() {
+		return this.change;
 	}
-	public int compareTo(Stock other) {
-		if (this.stockchange > other.stockchange) {
+	public int compareTo(final Stock other) {
+		if (this.change > other.change) {
 			return 1;
 		}
-		if (this.stockchange < other.stockchange) {
+		if (this.change < other.change) {
 			return -1;
 		}
-		if (this.stockname.compareTo(other.stockname) > 0) {
+		if (this.ticker.compareTo(other.ticker) > 0) {
 			return 1;
 		}
-		if (this.stockname.compareTo(other.stockname) < 0) {
+		if (this.ticker.compareTo(other.ticker) < 0) {
 			return -1;
 		}
 		return 0;
 	}
 	public String toString() {
-		String str = "";
-		str = str + this.stockname + this.stockchange;
-		return str;
+		return this.ticker + " " + this.change;
 	}
 }
-class Solution {
+/**
+ * Class for solution.
+ */
+final class Solution {
+	/**
+	 * Constructs the object.
+	 */
 	private Solution() {
 		//unused.
 	}
-	public static void main(String[] args) {
+	/**
+	 * main function.
+	 *
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
 		Scanner scan = new Scanner(System.in);
-		int stocknum = Integer.parseInt(scan.nextLine());
-		for (int i = 0; i < 6; i++) {
+		final int six = 6;
+		final int five = 5;
+		int num = Integer.parseInt(scan.nextLine());
+		for (int i = 0; i < six; i++) {
 			int count = 0;
-			MinPQ<Stock> minpqobj = new MinPQ<>();
-			MaxPQ<Stock> maxpqobj = new MaxPQ<>();
-			while (count < stocknum) {
-				String[] details = scan.nextLine().split(",");
-				Stock stockobj = new Stock(details[0], Float.parseFloat(details[1]));
-				minpqobj.insert(stockobj);
-				maxpqobj.insert(stockobj);
+			MinPQ<Stock> minpq = new MinPQ<>();
+			MaxPQ<Stock> maxpq = new MaxPQ<>();
+			while (count < num) {
+				String[] tokens = scan.nextLine().split(",");
+				Stock stock = new Stock(tokens[0], Float.parseFloat(tokens[1]));
+				minpq.insert(stock);
+				maxpq.insert(stock);
 				count++;
 			}
-			
-
-			BinarySearchTree<String, Float> stockbest = new  BinarySearchTree<>();
-			BinarySearchTree<String, Float> stockworst = new BinarySearchTree<>();
-			for (int j = 0; j < 5; j++) {
-				Stock maxpqbest = maxpqobj.delMax();
-				System.out.println(maxpqbest + "maxpqval");
-				stockbest.put(maxpqbest.getstockname(), maxpqbest.getstockchange());
-				Stock minpqworst = minpqobj.delMin();
-				System.out.println(minpqworst + "minpqbest");
-				stockworst.put(minpqworst.getstockname(), minpqworst.getstockchange());
+			BinarySearchTree<String, Float> stockbest =
+			new  BinarySearchTree<>();
+			BinarySearchTree<String, Float> stockworst
+			= new BinarySearchTree<>();
+			for (int j = 0; j < five; j++) {
+				Stock maxpqbest = maxpq.delMax();
+				System.out.println(maxpqbest);
+				stockbest.put(maxpqbest.getName(), maxpqbest.getChange());
 			}
-			
+			System.out.println();
+			for(int k = 0; k < five; k++) {
+				Stock minpqworst = minpq.delMin();
+				System.out.println(minpqworst);
+				stockworst.put(minpqworst.getName(), minpqworst.getChange());
+			}
+			System.out.println();
 		}
 	}
 }
