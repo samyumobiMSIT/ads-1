@@ -130,10 +130,11 @@ final class Solution {
                 // String op = qrs[1];
                 // String c_name = qrs[2];
                 switch (function) {
-                    case "get": System.out.println();
+                    case "get": 
+                        System.out.println("get");
                                 break;
 
-                    case "intersection": System.out.println();
+                    case "intersection": System.out.println("Intersection");
                                          break;
                     default: break;
                 }
