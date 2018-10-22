@@ -1,53 +1,115 @@
-class Book<Key extends Comparable<Key>,Value> {
-	String author;
-	String name;
-	Float price;
+/**
 
-	Book(String name, String author, Float price) {
-		this.name = name;
-		this.author = author;
-		this.price = price;
-	}
-	public String getAuthor() {
-		return this.author;
-	}
-	public String getName() {
-		return this.name;
-	}
-	public Float getPrice() {
-		return this.price;
-	}
-	public void setAuthor(String author) {
-		this.author = author;
-	}
-	public void setName(String name) {
-		this.author = author;
-	}
-	public void setPrice(Float price) {
-		this.author = author;
-	}
-	public String toString() {
-		return this.getName() + ", " + this.getAuthor() + ", " + this.getPrice();
-	}
-	public int compareTo(Book that) {
-		if (this.getName().compareTo(that.getName()) > 0) {
-			return 1;
-		} else if (this.getName().compareTo(that.getName()) < 0) {
-			return -1;
-		} else {
-			if (this.getAuthor().compareTo(that.getAuthor()) > 0) {
-				return 1;
-			} else if (this.getAuthor().compareTo(that.getAuthor()) < 0) {
-				return -1;
-			} else {
-				if (this.getPrice() > that.getPrice()) {
-					return 1;
-				} else if (this.getPrice() < that.getPrice()) {
-					return -1;
-				} else {
-					return 0;
-				}
-			}
-		}
-	}
+ * Class for book.
+
+ */
+
+class Book implements Comparable<Book> {
+
+    /**
+
+     * name of the book.
+
+     */
+
+    private String name;
+
+    /**
+
+     * author of the book.
+
+     */
+
+    private String author;
+
+    /**
+
+     * price of the book.
+
+     */
+
+    private double price;
+
+    /**
+
+     * Constructs the object.
+
+     * @param      n     name.
+
+     * @param      a     author.
+
+     * @param      p     price.
+
+     */
+
+    Book(final String n, final String a,
+
+        final double p) {
+
+        name = n;
+
+        author = a;
+
+        price = p;
+
+    }
+
+    /**
+
+     * Gets the name.
+
+     * @return     The name.
+
+     */
+
+    String getName() {
+
+        return name;
+
+    }
+
+    /**
+
+     * Gets the author.
+
+     * @return     The author.
+
+     */
+
+    String getAuthor() {
+
+        return author;
+
+    }
+
+    /**
+
+     * Gets the price.
+
+     * @return     The price.
+
+     */
+
+    double getPrice() {
+
+        return price;
+
+    }
+
+    /**
+
+     * compareTo method.
+
+     * @param      b     b of type Book.
+
+     * @return     integer.
+
+     */
+
+    public int compareTo(final Book b) {
+
+        return getName().compareTo(b.getName());
+
+    }
+
 }

@@ -1,61 +1,131 @@
-/**.
- * { item_description }
- */
 import java.util.Scanner;
-/**.
- * { item_description }
+
+/**
+
+ * Class for solution.
+
  */
+
 public final class Solution {
-    /**.
+
+    /**
+
      * Constructs the object.
+
      */
+
     private Solution() {
-        /**.
-         * author: Samyuktha
-         */
+
+
+
     }
-    /**.
-     * { function_description }
-     *
+
+    /**
+
+     * main method that drives the program.
+
      * @param      args  The arguments
+
+     * The time complexity for this method is O(N log N).
+
      */
-     public static void main(final String[] args) {
+
+    public static void main(final String[] args) {
+
         Scanner sc = new Scanner(System.in);
-        BinarySearchTree bst = new BinarySearchTree();
+
+        BinarySearchTree<Book, Integer> bst = new BinarySearchTree();
+
         while (sc.hasNext()) {
-            String input = sc.nextLine();
-            String[] tokens = input.split(",");
-            // System.out.println(Arrays.toString(tokens));
+
+            String[] tokens = sc.nextLine().split(",");
+
             switch (tokens[0]) {
-                case"put":
-                    bst.put(new Book(tokens[1], tokens[2],
-                     Float.parseFloat(tokens[2 + 1])),
-                      Integer.parseInt(tokens[2 + 2]));
-                    break;
-                case"get":
-                    System.out.println(bst.get(new Book(tokens[1], tokens[2],
-                     Float.parseFloat(tokens[2 + 1]))));
-                    break;
-                case"max":
-                    System.out.println(bst.max());
-                    break;
-                case"min":
-                    System.out.println(bst.min());
-                    break;
-                case"floor":
-                    System.out.println(bst.floor(new Book(tokens[1], tokens[2],
-                     Float.parseFloat(tokens[2 + 1]))));
-                    break;
-                case"ceiling":
-                    System.out.println(bst.ceil(new Book(tokens[1], tokens[2],
-                     Float.parseFloat(tokens[2 + 1]))));
-                    break;
-                case"select":
-                    System.out.println(bst.select(Integer.parseInt(tokens[1])));
-                    break;
-                default:
+
+            case "put":
+
+                Book key = new Book(tokens[1],
+
+                    tokens[2], Double.parseDouble(tokens[2 + 1]));
+
+                int value = Integer.parseInt(tokens[2 + 2]);
+
+                bst.put(key, value);
+
                 break;
+
+            case "get":
+
+                key = new Book(tokens[1],
+
+                               tokens[2], Double.parseDouble(tokens[2 + 1]));
+
+                System.out.println(bst.get(key));
+
+                break;
+
+            case "max":
+
+                Book b = bst.max();
+
+                System.out.println(b.getName() + ", "
+
+                    + b.getAuthor() + ", " + b.getPrice());
+
+                break;
+
+            case "min":
+
+                b = bst.min();
+
+                System.out.println(b.getName() + ", "
+
+                    + b.getAuthor() + ", " + b.getPrice());
+
+                break;
+
+            case "select":
+
+                b = bst.select(Integer.parseInt(tokens[1]));
+
+                System.out.println(b.getName() + ", "
+
+                    + b.getAuthor() + ", " + b.getPrice());
+
+                break;
+
+            case "floor":
+
+                b = bst.floor(new Book(tokens[1],
+
+                          tokens[2], Double.parseDouble(tokens[2 + 1])));
+
+                System.out.println(b.getName() + ", "
+
+                    + b.getAuthor() + ", " + b.getPrice());
+
+                break;
+
+            case "ceiling":
+
+                b = bst.ceiling(new Book(tokens[1],
+
+                          tokens[2], Double.parseDouble(tokens[2 + 1])));
+
+                System.out.println(b.getName() + ", "
+
+                    + b.getAuthor() + ", " + b.getPrice());
+
+                break;
+
+            default:
+
+                break;
+
             }
+
         }
+
     }
+
 }
