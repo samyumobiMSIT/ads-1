@@ -1,0 +1,47 @@
+########## Testcase 0: Failed ##########
+Expected Output: 
+1
+Python, eric, 5000.0
+2
+Algorithms, Bob Sedgewick, 6000.0
+Hello, Ajay, 200.0
+Algorithms, Bob Sedgewick, 6000.0
+Python, eric, 5000.0
+Your Output: 
+Error: Main method not found in class Book, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+########## Testcase 1: Failed ##########
+Expected Output: 
+Harry, JK, 600.0
+6
+Street, Kiran, 800.0
+Street, Kiran, 800.0
+5
+Harry, JK, 600.0
+7
+Street, Kiran, 800.0
+IT, Viswas, 400.0
+2
+Your Output: 
+Error: Main method not found in class Book, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+########## Testcase 2: Failed ##########
+Expected Output: 
+Harry, JK, 600.0
+Harry, JK, 600.0
+Street, Kiran, 800.0
+null
+IT, Viswas, 400.0
+Street, Kiran, 800.0
+Harry, JK, 600.0
+Street, Kiran, 800.0
+7
+Your Output: 
+Error: Main method not found in class Book, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
