@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 /**
 
  * Class for binary search tree.
@@ -373,6 +374,117 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
         }
 
     }
+
+    /**
+     * Returns all keys in the symbol table as an {@code Iterable}.
+     * To iterate over all of the keys in the symbol table named {@code st},
+     * use the foreach notation: {@code for (Key key : st.keys())}.
+     *
+     * @return all keys in the symbol table
+     */
+    /*public Iterable<Key> keys() {
+        if (isEmpty()) return new Queue<Key>();
+        return keys(min(), max());
+    }*/
+
+    /**
+     * Returns all keys in the symbol table in the given range,
+     * as an {@code Iterable}.
+     *
+     * @param  lo minimum endpoint
+     * @param  hi maximum endpoint
+     *
+     */
+   /* public Iterable<Key> keys(Key lo, Key hi) {
+        if (lo == null) return null;
+        if (hi == null) return null;
+
+        Queue<Key> queue = new Queue<Key>();
+        keys(root, queue, lo, hi);
+        return queue;
+    } */
+
+     /**
+     * Return the number of keys in the symbol table strictly less than {@code key}.
+     *
+     * @param  key the key
+     * 
+     */
+   
+
+    // Number of keys in the subtree less than key.
+    private int rank(Key key, Node x) {
+        if (x == null) return 0; 
+        int cmp = key.compareTo(x.key); 
+        if      (cmp < 0) return rank(key, x.left); 
+        else if (cmp > 0) return 1 + size(x.left) + rank(key, x.right); 
+        else              return size(x.left); 
+    } 
+
+    /**
+     * Removes the specified key and its associated value from this symbol table     
+     * (if the key is in this symbol table).    
+     *
+     * @param  key the key
+     *
+     */
+    
+    private Node delete(Node x, Key key) {
+        if (x == null) return null;
+
+        int cmp = key.compareTo(x.key);
+        if      (cmp < 0) x.left  = delete(x.left,  key);
+        else if (cmp > 0) x.right = delete(x.right, key);
+        else { 
+            if (x.right == null) return x.left;
+            if (x.left  == null) return x.right;
+            Node t = x;
+            x = min(t.right);
+            x.right = deleteMin(t.right);
+            x.left = t.left;
+        } 
+        x.size = size(x.left) + size(x.right) + 1;
+        return x;
+    } 
+
+
+     /**
+     * Removes the smallest key and associated value from the symbol table.
+     *
+     * 
+     */
+  
+
+    private Node deleteMin(Node x) {
+        if (x.left == null) return x.right;
+        x.left = deleteMin(x.left);
+        x.size = size(x.left) + size(x.right) + 1;
+        return x;
+    }
+
+    /**
+     * Removes the largest key and associated value from the symbol table.
+     *
+     * 
+     */
+    public void deleteMax() {
+        if (isEmpty()) {
+            throw new NoSuchElementException(
+                "Symbol table underflow");
+        }
+        root = deleteMax(root);
+        
+    }
+
+    private Node deleteMax(Node x) {
+        if (x.right == null) return x.left;
+        x.right = deleteMax(x.right);
+        x.size = size(x.left) + size(x.right) + 1;
+        return x;
+    }
+
+   
+
 
     /**
 
