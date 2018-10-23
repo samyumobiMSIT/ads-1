@@ -373,46 +373,11 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
 
         }
 
-    }
-
-    /**
-     * Returns all keys in the symbol table as an {@code Iterable}.
-     * To iterate over all of the keys in the symbol table named {@code st},
-     * use the foreach notation: {@code for (Key key : st.keys())}.
-     *
-     * @return all keys in the symbol table
-     */
-    /*public Iterable<Key> keys() {
-        if (isEmpty()) return new Queue<Key>();
-        return keys(min(), max());
-    }*/
-
-    /**
-     * Returns all keys in the symbol table in the given range,
-     * as an {@code Iterable}.
-     *
-     * @param  lo minimum endpoint
-     * @param  hi maximum endpoint
-     *
-     */
-   /* public Iterable<Key> keys(Key lo, Key hi) {
-        if (lo == null) return null;
-        if (hi == null) return null;
-
-        Queue<Key> queue = new Queue<Key>();
-        keys(root, queue, lo, hi);
-        return queue;
-    } */
-
-     /**
-     * Return the number of keys in the symbol table strictly less than {@code key}.
-     *
-     * @param  key the key
-     * 
-     */
-   
-
-    // Number of keys in the subtree less than key.
+    }    
+    
+    /** Number of keys in the subtree less than key.
+    ** Time complexity is O(n) for delete method
+    **/
     private int rank(Key key, Node x) {
         if (x == null) return 0; 
         int cmp = key.compareTo(x.key); 
@@ -424,7 +389,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     /**
      * Removes the specified key and its associated value from this symbol table     
      * (if the key is in this symbol table).    
-     *
+     * Time complexity is O(n) for delete method
      * @param  key the key
      *
      */
