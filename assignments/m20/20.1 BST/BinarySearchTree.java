@@ -448,14 +448,22 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     } 
 
 
-     /**
-     * Removes the smallest key and associated value from the symbol table.
-     *
-     * 
+    /**
+     * deleteMin method that deletes the minimum node.
+     * Time complexity for this method is O(N).
+     */
+    public void deleteMin() {
+        root = deleteMin(root);
+    }
+    /**
+     * deleteMin method that deletes the minimum node.
+     * @param      x     Node.
+     * @return     Node.
+     * Time complexity for this method is O(N).
      */
   
 
-    private Node deleteMin(Node x) {
+    private Node deleteMin(final Node x) {
         if (x.left == null) return x.right;
         x.left = deleteMin(x.left);
         x.size = size(x.left) + size(x.right) + 1;
@@ -465,7 +473,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     /**
      * Removes the largest key and associated value from the symbol table.
      *
-     * 
+     * Time complexity for this method is O(N).
      */
     public void deleteMax() {
         if (isEmpty()) {
