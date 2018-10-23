@@ -117,6 +117,14 @@ public final class Solution {
                     + b.getAuthor() + ", " + b.getPrice());
 
                 break;
+            case "deleteMax":
+            bst.deleteMax();
+            break;
+            case "deleteMin":
+            bst.deleteMin();
+            break;
+            case "delete":
+
 
             default:
 
