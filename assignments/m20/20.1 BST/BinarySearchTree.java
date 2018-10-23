@@ -394,7 +394,8 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      *
      */
     
-    private Node delete(Node x, Key key) {
+    private Node delete(final Node x, final Key key) {
+         Node temp = x;
         if (x == null) return null;
 
         int cmp = key.compareTo(x.key);
@@ -404,12 +405,12 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
             if (x.right == null) return x.left;
             if (x.left  == null) return x.right;
             Node t = x;
-            x = min(t.right);
-            x.right = deleteMin(t.right);
-            x.left = t.left;
+            temp = min(t.right);
+            temp.right = deleteMin(t.right);
+            temp.left = t.left;
         } 
-        x.size = size(x.left) + size(x.right) + 1;
-        return x;
+        temp.size = size(temp.left) + size(temp.right) + 1;
+        return temp;
     } 
 
 

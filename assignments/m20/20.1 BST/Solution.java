@@ -124,8 +124,10 @@ public final class Solution {
             bst.deleteMin();
             break;
             case "delete":
+            Book b = bst.delete(new Book(tokens[1],
 
-
+                          tokens[2], Double.parseDouble(tokens[2 + 1])));
+            break;
             default:
 
                 break;
