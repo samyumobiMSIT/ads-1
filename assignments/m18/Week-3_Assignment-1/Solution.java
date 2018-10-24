@@ -96,14 +96,24 @@ public final class Solution {
    * @param      minST   The minimum st
    * @param      stocks  The stocks
    */
+  /** 
+  * O/p Stocks that are both best and worst performers.
+  * O/p Stocks that are not in bottom5 of minSt/maxSt atleast once.
+  */
   public static void secOut(final String[] inp,
                             final BinaryST<String, Integer> maxST,
                             final BinaryST<String, Integer> minST,
                             final ArrayList<String> stocks) {
+    /** function call from secOut(input, maxST, minST, stocks);
+    **/
     switch (inp[0]) {
     case "get":
-      if (inp[1].equals("minST")) {
+        if (inp[1].equals("minST")) {
         if (minST.contains(inp[2])) {
+          /** get value of input from minST.
+          ** check if value is in minST (WP BSST)
+          ** prints wp if inp is not in bottom positions
+          **/
           System.out.println(minST.get(inp[2]));
         } else {
           System.out.println(0);
@@ -111,6 +121,7 @@ public final class Solution {
         break;
       } else if (inp[1].equals("maxST")) {
         if (maxST.contains(inp[2])) {
+          //get value of input in maxST
           System.out.println(maxST.get(inp[2]));
         } else {
           System.out.println(0);
@@ -118,6 +129,11 @@ public final class Solution {
         break;
       }
     case "intersection":
+    /**calls MinPQ to ckeck if stock has appeared atleast once.
+    ** tem gets stock value
+    ** check if value is in min , max
+    ** performs minPQ on values and inserts in minpq
+    **/
       MinPQ<String> out = new MinPQ<String>();
       for (int i = 0; i < stocks.size(); i++) {
         String tem = stocks.get(i);
@@ -125,6 +141,10 @@ public final class Solution {
           out.insert(tem);
         }
       }
+      /** minPQ is not empty
+      ** delMin() element 
+      ** performs comp, exch, sink, resize
+      **/
       while (!out.isEmpty()) {
         System.out.println(out.delMin());
       }
@@ -143,27 +163,38 @@ public final class Solution {
   public static void main(final String[] args) {
     Scanner scan = new Scanner(System.in);
 
+    /** Creating two AL's to store bp,wp.
+    **/
     int stockSize = Integer.parseInt(scan.nextLine());
     ArrayList<String> stocks = new ArrayList<String>();
     ArrayList<Stock> bestPerformers = new ArrayList<Stock>();
     ArrayList<Stock> worstPerformers = new ArrayList<Stock>();
 
+    /** Building minPQ,maxPQ for every hour using ArrayList
+    **/
+
     // hour 1
     MinPQ<Stock> hr1Min = new MinPQ<Stock>();
     MaxPQ<Stock> hr1Max = new MaxPQ<Stock>();
 
+    //iterating through ArrayList(stock) to max,min elements using temp as pointer
     for (int i = 0; i < stockSize; i++) {
+      //input parameter to read inputs to store in min and max stocks
       String[] inputs = scan.nextLine().split(",");
       Stock temp = new Stock(inputs[0],
                              Double.parseDouble(inputs[1]));
       hr1Max.insert(temp);
       hr1Min.insert(temp);
-
+      /**if stock have same change, to display preference.
+      ** in decreasing order of company.
+      **/
       if (!stocks.contains(temp.getComp())) {
         stocks.add(temp.getComp());
       }
     }
-
+    /** print top 5 best and worst performers.
+    **for wach hour.
+    **/
     hr1Max.print5(bestPerformers);
     hr1Min.print5(worstPerformers);
 
@@ -243,6 +274,10 @@ public final class Solution {
     hr6Max.print5(bestPerformers);
     hr6Min.print5(worstPerformers);
 
+    /**Creating two ArrayList to get the bp, wp .
+    ** and their company names.
+    ** frequency: how many times appeared 
+    **/
     ArrayList<String> bestP = new ArrayList<String>();
     ArrayList<String> worstP = new ArrayList<String>();
 
@@ -254,9 +289,17 @@ public final class Solution {
       worstP.add(worstPerformers.get(i).getComp());
     }
 
+    /** BSST stores k- Stock name,v-bestP,worstP .
+    **
+    **/
     BinaryST<String, Integer> maxST = new BinaryST<String, Integer>();
     BinaryST<String, Integer> minST = new BinaryST<String, Integer>();
 
+    /** iterate thru bestP. wP
+    ** temp to get bestP. wP
+    ** if maxST contains value, store value in BSST maxST.
+    ** if minST contains value,store value in BSST minST.
+    **/
     for (int i = 0; i < bestP.size(); i++) {
       String temp = bestP.get(i);
       if (!maxST.contains(temp)) {

@@ -1,0 +1,4 @@
+i) invalid RBT
+ii) Unequal black links on left subtree and right subtree. Invalid RBT
+iii) 0 Red links, Equal Black links formed is balanced. Valid RBT
+iv) Equal number of red and black links. Valid RBT 

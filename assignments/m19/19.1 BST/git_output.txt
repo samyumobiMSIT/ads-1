@@ -1,0 +1,27 @@
+On branch master
+Your branch is ahead of 'origin/master' by 7 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+	deleted:    ../../../practice/m19/19.1 BST/16.1. BinarySearchTree.docx
+	deleted:    ../../../practice/m19/19.1 BST/Solution.java
+	deleted:    ../../../practice/m19/19.1 BST/md5/Input000.txt
+	deleted:    ../../../practice/m19/19.1 BST/md5/Input001.txt
+	deleted:    ../../../practice/m19/19.1 BST/md5/Input002.txt
+	deleted:    ../../../practice/m19/19.1 BST/md5/output000.txt
+	deleted:    ../../../practice/m19/19.1 BST/md5/output001.txt
+	deleted:    ../../../practice/m19/19.1 BST/md5/output002.txt
+	deleted:    ../../../practice/m19/19.1 BST/md5/problem_id.txt
+	deleted:    ../../../practice/m19/19.1 BST/testcases/input000.txt
+	deleted:    ../../../practice/m19/19.1 BST/testcases/input001.txt
+	deleted:    ../../../practice/m19/19.1 BST/testcases/input002.txt
+	deleted:    ../../../practice/m19/19.1 BST/testcases/output000.txt
+	deleted:    ../../../practice/m19/19.1 BST/testcases/output001.txt
+	deleted:    ../../../practice/m19/19.1 BST/testcases/output002.txt
+	deleted:    ../../../practice/m19/19.1 BST/testcases/problem_id.txt
+
+Untracked files:
+	../../../eval.exe
+
+no changes added to commit
+fatal: unable to access 'https://github.com/samyumobiMSIT/ads-1.git/': Failed to connect to github.com port 443: Timed out

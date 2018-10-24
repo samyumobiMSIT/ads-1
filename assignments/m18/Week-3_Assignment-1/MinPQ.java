@@ -93,6 +93,8 @@ public class MinPQ<Key> {
      * @return a smallest key on this priority queue
      */
     public Key delMin() {
+        //no of hours is 6
+        // top5 bestP,worstP array is n-1 so taking 4
         final int four = 4;
         Key min = pq[1];
         exch(1, n--);
