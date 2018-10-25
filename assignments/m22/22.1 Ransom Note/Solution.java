@@ -73,17 +73,13 @@ public class Solution {
             magazine[i] = in.next();
         }
         // **** read words for ransom note ****         
-        String ransom [] = new String[n];
+        String ransom[]= new String[n];
         for (int i = 0; i < n; i++) {
             ransom[i] = in.next();
-        }
-         
-        // **** close scanner ****
-         
-        in.close();
-         
+        }         
+        // **** close scanner ****         
+        in.close();         
         // **** determine if there are sufficient words for the ransom note ****
-         
         System.out.println(sufficientWords(magazine, ransom));
     }
 }

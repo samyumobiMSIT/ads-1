@@ -38,11 +38,10 @@ Starting audit...
 [ERROR] D:\ads-1\assignments\m22\22.1 Ransom Note\Solution.java:71:24: Array brackets at illegal position. [ArrayTypeStyle]
 [ERROR] D:\ads-1\assignments\m22\22.1 Ransom Note\Solution.java:72:36: '{' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] D:\ads-1\assignments\m22\22.1 Ransom Note\Solution.java:75: Line has trailing spaces. [RegexpSingleline]
-[ERROR] D:\ads-1\assignments\m22\22.1 Ransom Note\Solution.java:76:22: 'ransom' is followed by whitespace. [NoWhitespaceAfter]
-[ERROR] D:\ads-1\assignments\m22\22.1 Ransom Note\Solution.java:76:23: Array brackets at illegal position. [ArrayTypeStyle]
+[ERROR] D:\ads-1\assignments\m22\22.1 Ransom Note\Solution.java:76:22: Array brackets at illegal position. [ArrayTypeStyle]
+[ERROR] D:\ads-1\assignments\m22\22.1 Ransom Note\Solution.java:76:24: '=' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] D:\ads-1\assignments\m22\22.1 Ransom Note\Solution.java:79: Line has trailing spaces. [RegexpSingleline]
 [ERROR] D:\ads-1\assignments\m22\22.1 Ransom Note\Solution.java:80: Line has trailing spaces. [RegexpSingleline]
-[ERROR] D:\ads-1\assignments\m22\22.1 Ransom Note\Solution.java:82: Line has trailing spaces. [RegexpSingleline]
-[ERROR] D:\ads-1\assignments\m22\22.1 Ransom Note\Solution.java:84: Line has trailing spaces. [RegexpSingleline]
-[ERROR] D:\ads-1\assignments\m22\22.1 Ransom Note\Solution.java:86: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\ads-1\assignments\m22\22.1 Ransom Note\Solution.java:81: Line has trailing spaces. [RegexpSingleline]
 Audit done.
-Checkstyle ends with 45 errors.
+Checkstyle ends with 44 errors.
