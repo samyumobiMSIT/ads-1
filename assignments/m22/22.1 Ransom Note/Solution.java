@@ -17,6 +17,7 @@ public class Solution {
     static String sufficientWords(String[] magazine, String[] ransom) { 
         /**
         ** build magazine map **
+        ** complexity containsKey method : constant **
         **/     
         HashMap<String, Integer> magMap = new HashMap<String, Integer>();         
         for (String word : magazine) {
@@ -31,6 +32,7 @@ public class Solution {
  
         /**
         ** build ransom map **
+         ** complexity: O(n) **
         **/         
         HashMap<String, Integer> ransomMap = new HashMap<String, Integer>();         
         for (String word : ransom) {
@@ -45,6 +47,7 @@ public class Solution {
          
         /**
         ** compare words and counts **
+        ** complexity: O(n) **
         **/         
         Iterator iter = ransomMap.entrySet().iterator();         
         while (iter.hasNext()) {
