@@ -7,18 +7,19 @@ import java.util.concurrent.*;
 import java.util.regex.*;
 import java.util.Scanner;
 /**
-*Solution class
+*Solution class *
 **/
-public class Solution {
-
+class Solution {
     /**
      * Check if we have sufficient words in the magazine for the ransom note.
+     * @param ransom
+     * @param magazine
+     * @return word
      */
-    static String sufficientWords(String[] magazine, String[] ransom) { 
+    static String sufficientWords(final String[] magazine, final String[] ransom) { 
         /**
         ** build magazine map **
-        ** complexity containsKey method : constant **
-        **/     
+        ** complexity containsKey method : constant **/     
         HashMap<String, Integer> magMap = new HashMap<String, Integer>();         
         for (String word : magazine) {
             if (magMap.containsKey(word)) {
@@ -28,13 +29,13 @@ public class Solution {
             } else {
                 magMap.put(word, 1);
             }
-        }
- 
+        } 
         /**
-        ** build ransom map **
-         ** complexity: O(n) **
+        ** build ransom map  **
+        ** complexity: O(n)  **
         **/         
-        HashMap<String, Integer> ransomMap = new HashMap<String, Integer>();         
+        HashMap<String, Integer> ransomMap = new HashMap<String, 
+        Integer>();         
         for (String word : ransom) {
             if (ransomMap.containsKey(word)) {
                 int count = ransomMap.get(word);
@@ -43,18 +44,17 @@ public class Solution {
             } else {
                 ransomMap.put(word, 1);
             }
-        }
-         
+        }         
         /**
         ** compare words and counts **
         ** complexity: O(n) **
-        **/         
+        **/
         Iterator iter = ransomMap.entrySet().iterator();         
         while (iter.hasNext()) {
-            Map.Entry<String, Integer> pair = (Map.Entry<String,
-             Integer>)iter.next();
+            Map.Entry<String, Integer> pair = (Map.Entry<String, 
+                Integer>) iter.next();
             String word = pair.getKey();
-            int count   = pair.getValue();             
+            int count   = pair.getValue();
             if (!magMap.containsKey(word)) {
                 return "No";
             } else {
@@ -64,20 +64,20 @@ public class Solution {
             }
         }
         return "Yes";
-    }
- 
+    } 
     /**
      * Main.
+     * @param args
      */
     public static void main(String[] args) {
-        /**** open scanner ****/        
-        Scanner in  = new Scanner(System.in);         
+        /**** open scanner ****/
+    Scanner in  = new Scanner(System.in);         
         /**** read parameters ****/         
-        int m       = in.nextInt();
-        int n       = in.nextInt();         
+    int m = in.nextInt();
+    int n = in.nextInt();         
         /** read words from the magazine **/        
         String magazine[] = new String[m];
-        for (int i = 0; i < m; i++){
+        for (int i = 0; i < m; i++) {
             magazine[i] = in.next();
         }
         /**** read words for ransom note ****/        
@@ -85,9 +85,11 @@ public class Solution {
         for (int i = 0; i < n; i++) {
             ransom[i] = in.next();
         }
-        // **** close scanner **** 
+        /**** close scanner ****/
         in.close();         
-        // **** determine if there are sufficient words for the ransom note ****
+        /**** determine if there are sufficient words **
+         ** for the ransom note **
+         **/
         System.out.println(sufficientWords(magazine, ransom));
     }
 }
