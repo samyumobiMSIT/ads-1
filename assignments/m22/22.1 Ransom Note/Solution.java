@@ -12,15 +12,16 @@ import java.util.Scanner;
 class Solution {
     /**
      * Check if we have sufficient words in the magazine for the ransom note.
-     * @param ransom
-     * @param magazine
-     * @return word
+     * @param args {ransom}
+     * @param args {magazine}
+     * @return args {word}
      */
     static String sufficientWords(final String[] magazine, final String[] ransom) { 
         /**
         ** build magazine map **
         ** complexity containsKey method : constant **/     
-        HashMap<String, Integer> magMap = new HashMap<String, Integer>();         
+        HashMap<String, Integer> magMap = new HashMap<String,
+         Integer>();         
         for (String word : magazine) {
             if (magMap.containsKey(word)) {
                 int count = magMap.get(word);
@@ -51,8 +52,8 @@ class Solution {
         **/
         Iterator iter = ransomMap.entrySet().iterator();         
         while (iter.hasNext()) {
-            Map.Entry<String, Integer> pair = (Map.Entry<String, 
-                Integer>) iter.next();
+        Map.Entry<String, Integer> pair = (Map.Entry<String,
+            Integer>) iter.next();
             String word = pair.getKey();
             int count   = pair.getValue();
             if (!magMap.containsKey(word)) {
@@ -67,26 +68,26 @@ class Solution {
     } 
     /**
      * Main.
-     * @param args
+     * @param: args
      */
     public static void main(String[] args) {
-        /**** open scanner ****/
+    /**** open scanner ****/
     Scanner in  = new Scanner(System.in);         
-        /**** read parameters ****/         
+    /**** read parameters ****/         
     int m = in.nextInt();
     int n = in.nextInt();         
-        /** read words from the magazine **/        
+    /** read words from the magazine **/        
         String magazine[] = new String[m];
         for (int i = 0; i < m; i++) {
             magazine[i] = in.next();
         }
         /**** read words for ransom note ****/        
-        String ransom[] = new String[n];
+    String ransom[] = new String[n];
         for (int i = 0; i < n; i++) {
             ransom[i] = in.next();
         }
         /**** close scanner ****/
-        in.close();         
+    in.close();         
         /**** determine if there are sufficient words **
          ** for the ransom note **
          **/

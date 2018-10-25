@@ -1,36 +1,36 @@
-########## Testcase 0: Passed ##########
+########## Testcase 0: Failed ##########
 Expected Output: 
 Yes
 Your Output: 
-Yes
+Error: Could not find or load main class Solution1
 ----------------------------------------
-########## Testcase 1: Passed ##########
+########## Testcase 1: Failed ##########
 Expected Output: 
 No
 Your Output: 
-No
+Error: Could not find or load main class Solution1
 ----------------------------------------
-########## Testcase 2: Passed ##########
+########## Testcase 2: Failed ##########
 Expected Output: 
 No
 Your Output: 
-No
+Error: Could not find or load main class Solution1
 ----------------------------------------
-########## Testcase 3: Passed ##########
+########## Testcase 3: Failed ##########
 Expected Output: 
 No
 Your Output: 
-No
+Error: Could not find or load main class Solution1
 ----------------------------------------
-########## Testcase 4: Passed ##########
+########## Testcase 4: Failed ##########
 Expected Output: 
 Yes
 Your Output: 
-Yes
+Error: Could not find or load main class Solution1
 ----------------------------------------
-########## Testcase 5: Passed ##########
+########## Testcase 5: Failed ##########
 Expected Output: 
 Yes
 Your Output: 
-Yes
+Error: Could not find or load main class Solution1
 ----------------------------------------
