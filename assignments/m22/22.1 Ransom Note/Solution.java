@@ -5,7 +5,9 @@ import java.text.*;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
-
+/**
+*Solution class
+**/
 public class Solution {
 
     /**
@@ -106,5 +108,7 @@ public class Solution {
         System.out.println(sufficientWords(magazine, ransom));
     }
 }
+
+
 
  
