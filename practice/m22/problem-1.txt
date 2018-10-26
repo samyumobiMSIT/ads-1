@@ -1,0 +1,7 @@
+Is the following implementation of hashCode() legal?
+public int hashCode() {
+   return 17;
+}
+
+The above implementation of hashCode() legal. But it would cause all keys to be stored at value 17 which would take time to implement put(), get() operations, cause poor performance and collision.
+

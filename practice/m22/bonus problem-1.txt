@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+public class Solution
+{
+    public static void main(String[] args)
+    {     
+      int test_case,money,no_of_flavor,i,j;
+      Scanner inp=new Scanner(System.in)  ;
+      test_case=inp.nextInt();
+      while(test_case!=0)
+      {
+       money=inp.nextInt(); 
+       no_of_flavor=inp.nextInt();
+       int[] flavors=new int[10000]; 
+       for(i=0;i<no_of_flavor;i++)
+       {
+           flavors[i]=inp.nextInt();
+       }   
+       for(i=0;i<no_of_flavor;i++) 
+       {
+           for(j=i;j<no_of_flavor;j++)
+           { 
+           if(i==j)
+               continue;
+            else
+                {
+                  if(flavors[i]+flavors[j]>money)
+                      continue;
+                  else if(flavors[i]+flavors[j]==money)
+                      System.out.println((i+1)+" "+(j+1));
+                }
+          }
+      }
+          test_case=test_case-1;
+}
+}
+}
