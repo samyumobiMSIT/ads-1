@@ -1,6 +1,5 @@
 Starting audit...
 [ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:1:8: Unused import - java.util.Scanner. [UnusedImports]
 [ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:2:8: Unused import - java.io.File. [UnusedImports]
 [ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:3: Missing a Javadoc comment. [JavadocType]
 [ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:3:32: '>' is followed by an illegal character. [GenericWhitespace]
@@ -65,5 +64,15 @@ Starting audit...
 [ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:99:11: 'if' is not followed by whitespace. [WhitespaceAround]
 [ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:99:31: '{' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:103:12: 'for' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:111: Missing a Javadoc comment. [JavadocType]
+[ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:111:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
+[ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:111:15: '{' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:112:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:112:15: '{' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:115:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:117: Line is longer than 80 characters (found 85). [LineLength]
+[ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:118:14: 'while' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:118:30: '{' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] D:\ads-1\assignments\m23\23.1 Hashing with Linear Probing\Solution.java:120:19: 'switch' is not followed by whitespace. [WhitespaceAround]
 Audit done.
-Checkstyle ends with 66 errors.
+Checkstyle ends with 75 errors.
