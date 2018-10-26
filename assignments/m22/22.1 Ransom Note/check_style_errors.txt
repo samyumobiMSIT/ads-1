@@ -1,4 +1,4 @@
 Starting audit...
-[ERROR] D:\ads-1\assignments\m22\22.1 Ransom Note\Solution1.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] D:\ads-1\assignments\m22\22.1 Ransom Note\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 Audit done.
 Checkstyle ends with 1 errors.
