@@ -9,8 +9,8 @@ Exception in thread "main" java.lang.NumberFormatException: For input string: "A
 	at java.lang.NumberFormatException.forInputString(Unknown Source)
 	at java.lang.Integer.parseInt(Unknown Source)
 	at java.lang.Integer.parseInt(Unknown Source)
-	at Student.<init>(Solution.java:87)
-	at Solution.main(Solution.java:18)
+	at Student.<init>(Solution.java:88)
+	at Solution.main(Solution.java:19)
 ----------------------------------------
 ########## Testcase 1: Failed ##########
 Expected Output: 
@@ -64,8 +64,8 @@ Exception in thread "main" java.lang.NumberFormatException: For input string: "A
 	at java.lang.NumberFormatException.forInputString(Unknown Source)
 	at java.lang.Integer.parseInt(Unknown Source)
 	at java.lang.Integer.parseInt(Unknown Source)
-	at Student.<init>(Solution.java:87)
-	at Solution.main(Solution.java:18)
+	at Student.<init>(Solution.java:88)
+	at Solution.main(Solution.java:19)
 ----------------------------------------
 ########## Testcase 2: Failed ##########
 Expected Output: 
@@ -136,8 +136,8 @@ Exception in thread "main" java.lang.NumberFormatException: For input string: "A
 	at java.lang.NumberFormatException.forInputString(Unknown Source)
 	at java.lang.Integer.parseInt(Unknown Source)
 	at java.lang.Integer.parseInt(Unknown Source)
-	at Student.<init>(Solution.java:87)
-	at Solution.main(Solution.java:18)
+	at Student.<init>(Solution.java:88)
+	at Solution.main(Solution.java:19)
 ----------------------------------------
 ########## Testcase 3: Failed ##########
 Expected Output: 
@@ -860,6 +860,6 @@ Exception in thread "main" java.lang.NumberFormatException: For input string: "H
 	at java.lang.NumberFormatException.forInputString(Unknown Source)
 	at java.lang.Integer.parseInt(Unknown Source)
 	at java.lang.Integer.parseInt(Unknown Source)
-	at Student.<init>(Solution.java:87)
-	at Solution.main(Solution.java:18)
+	at Student.<init>(Solution.java:88)
+	at Solution.main(Solution.java:19)
 ----------------------------------------
