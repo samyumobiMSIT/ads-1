@@ -5,8 +5,12 @@ Rivest
 Dan
 Abegg
 Your Output: 
-Student not present
-Student not present
+Exception in thread "main" java.lang.NumberFormatException: For input string: "Alice"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at Student.<init>(Solution.java:87)
+	at Solution.main(Solution.java:18)
 ----------------------------------------
 ########## Testcase 1: Failed ##########
 Expected Output: 
@@ -56,9 +60,12 @@ Tim Cahill
 Abegg
 Brian Caffrey
 Your Output: 
-Student not present
-Student not present
-Student not present
+Exception in thread "main" java.lang.NumberFormatException: For input string: "Alice"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at Student.<init>(Solution.java:87)
+	at Solution.main(Solution.java:18)
 ----------------------------------------
 ########## Testcase 2: Failed ##########
 Expected Output: 
@@ -125,9 +132,12 @@ Neil Cadigan
 Megon
 Meili Cady
 Your Output: 
-Student not present
-Student not present
-Student not present
+Exception in thread "main" java.lang.NumberFormatException: For input string: "Alice"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at Student.<init>(Solution.java:87)
+	at Solution.main(Solution.java:18)
 ----------------------------------------
 ########## Testcase 3: Failed ##########
 Expected Output: 
@@ -846,14 +856,10 @@ Marianna Palk
 Thelma Page
 Vicky Hales-Dutton
 Your Output: 
-Student not present
-Student not present
-Student not present
-Student not present
-Student not present
-Student not present
-Student not present
-Student not present
-Student not present
-Student not present
+Exception in thread "main" java.lang.NumberFormatException: For input string: "H3CZ"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at Student.<init>(Solution.java:87)
+	at Solution.main(Solution.java:18)
 ----------------------------------------
