@@ -1,23 +1,23 @@
-import java.util.*;
+import java.util.Scanner;
 class Student {
     /**
-    * roll no
+    * roll no.
     */
     String rollno;
    private String name;
    /** 
-    * name
+    * name.
     **/
    private double total;
     /** 
-    * total
+    * total.
     **/
     Student() {
     }
-    Student(final String rollno, final String name, final double total) {
-        this.rollno = rollno;
-        this.name = name;
-        this.total = total;
+    Student(final String rollno1, final String sname, final double stotal) {
+        this.rollno = rollno1;
+        this.name = sname;
+        this.total = stotal;
     }
 }
 /**
@@ -26,6 +26,7 @@ class Student {
 class Solution {
     /**
     ** Main. 
+    ** @param args String , Double
     **/
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
