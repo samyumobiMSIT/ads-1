@@ -9,19 +9,19 @@ class Student {
     private String rno;
    private String sname;
    /** 
-    * name.
+    * sname.
     **/
    private double stotal;
     /** 
-    * total.
+    * stotal1.
     **/
     Student() {
     }
      /**
      * 
      * @param      rollno1  The rollno
-     * @param      name1    The name
-     * @param      total1  The total
+     * @param      sname1    The name
+     * @param      stotal1  The total
      */
     Student(final String rollno1, final String sname1, final double stotal1) {
         this.rno = rollno1;
@@ -35,7 +35,8 @@ class Student {
 class Solution {
 /**
 ** Main. 
-** @param args String , Double
+* @param String name(rollno)
+* @param Double totalmarks
 **/
 public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -61,13 +62,10 @@ public static void main(final String[] args) {
             }
             switch (query[2]) {
                 case "1":
-                    System.out.println(lp1.get(query[1]));
-
-                
+                System.out.println(lp1.get(query[1]));
                 break;
                 case "2":
                 System.out.println(lp2.get(query[1]));
-                
                 break;
                 default:
                 break;

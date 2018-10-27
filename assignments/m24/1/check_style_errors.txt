@@ -3,14 +3,10 @@ Starting audit...
 [ERROR] D:\ads-1\assignments\m24\1\Solution.java:11: Line has trailing spaces. [RegexpSingleline]
 [ERROR] D:\ads-1\assignments\m24\1\Solution.java:15: Line has trailing spaces. [RegexpSingleline]
 [ERROR] D:\ads-1\assignments\m24\1\Solution.java:21: Line has trailing spaces. [RegexpSingleline]
-[ERROR] D:\ads-1\assignments\m24\1\Solution.java:23:8: Unused @param tag for 'name1'. [JavadocMethod]
-[ERROR] D:\ads-1\assignments\m24\1\Solution.java:24:8: Unused @param tag for 'total1'. [JavadocMethod]
-[ERROR] D:\ads-1\assignments\m24\1\Solution.java:26:48: Expected @param tag for 'sname1'. [JavadocMethod]
-[ERROR] D:\ads-1\assignments\m24\1\Solution.java:26:69: Expected @param tag for 'stotal1'. [JavadocMethod]
 [ERROR] D:\ads-1\assignments\m24\1\Solution.java:35:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
 [ERROR] D:\ads-1\assignments\m24\1\Solution.java:37: Line has trailing spaces. [RegexpSingleline]
-[ERROR] D:\ads-1\assignments\m24\1\Solution.java:40:40: Expected @param tag for 'args'. [JavadocMethod]
-[ERROR] D:\ads-1\assignments\m24\1\Solution.java:66: Line has trailing spaces. [RegexpSingleline]
-[ERROR] D:\ads-1\assignments\m24\1\Solution.java:70: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\ads-1\assignments\m24\1\Solution.java:38:3: Unused @param tag for 'String'. [JavadocMethod]
+[ERROR] D:\ads-1\assignments\m24\1\Solution.java:39:3: Unused @param tag for 'Double'. [JavadocMethod]
+[ERROR] D:\ads-1\assignments\m24\1\Solution.java:41:40: Expected @param tag for 'args'. [JavadocMethod]
 Audit done.
-Checkstyle ends with 13 errors.
+Checkstyle ends with 9 errors.
