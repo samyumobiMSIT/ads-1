@@ -1,9 +1,12 @@
 import java.util.Scanner;
+/**
+*** Student class.
+**/
 class Student {
-    /**
-    * roll no.
-    */
-    String rollno;
+/**
+** roll no.
+**/
+    private String rollno;
    private String name;
    /** 
     * name.
@@ -42,7 +45,7 @@ class Solution {
              lpht1.put(tokens[0], tokens[1]);
              lpht2.put(tokens[0], Double.parseDouble(tokens[2]));
             }
-        int m = Integer.parseInt(sc.nextLine());
+            int m = Integer.parseInt(sc.nextLine());
         for (int i = 0; i < m; i++) {
             String que = sc.nextLine();
             String[] query = que.split(" ");
