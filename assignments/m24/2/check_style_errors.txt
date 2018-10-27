@@ -1,11 +1,4 @@
 Starting audit...
-[ERROR] D:\ads-1\assignments\m24\2\Solution.java:2:8: Unused import - java.util.NoSuchElementException. [UnusedImports]
-[ERROR] D:\ads-1\assignments\m24\2\Solution.java:7:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
-[ERROR] D:\ads-1\assignments\m24\2\Solution.java:9: Line has trailing spaces. [RegexpSingleline]
-[ERROR] D:\ads-1\assignments\m24\2\Solution.java:12:40: Expected @param tag for 'args'. [JavadocMethod]
-[ERROR] D:\ads-1\assignments\m24\2\Solution.java:77:4: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] D:\ads-1\assignments\m24\2\Solution.java:78: Line has trailing spaces. [RegexpSingleline]
-[ERROR] D:\ads-1\assignments\m24\2\Solution.java:82: Line has trailing spaces. [RegexpSingleline]
-[ERROR] D:\ads-1\assignments\m24\2\Solution.java:87:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] D:\ads-1\assignments\m24\2\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 Audit done.
-Checkstyle ends with 8 errors.
+Checkstyle ends with 1 errors.
