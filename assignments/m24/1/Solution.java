@@ -17,6 +17,12 @@ class Student {
     **/
     Student() {
     }
+     /**
+     * 
+     * @param      rollno1  The rollno
+     * @param      name1    The name
+     * @param      total1  The total
+     */
     Student(final String rollno1, final String sname, final double stotal) {
         this.rollno = rollno1;
         this.name = sname;
@@ -26,7 +32,7 @@ class Student {
 /**
 ** Solution class.
 **/
-class Solution {
+final class Solution {
 /**
 ** Main. 
 ** @param args String , Double
@@ -50,19 +56,18 @@ public static void main(final String[] args) {
             String que = sc.nextLine();
             String[] query = que.split(" ");
             if (!lpht1.contains(query[1])) {
-                System.out.println("Student doesn't exists...");
+                System.out.println("Student not present");
                 continue;
             }
             switch (query[2]) {
                 case "1":
                     System.out.println(lpht1.get(query[1]));
 
-                //System.out.println(lpht1.get(query[1]));
-                //lpht1.get(query[1]);
+                
                 break;
                 case "2":
                 System.out.println(lpht2.get(query[1]));
-                //lpht2.get(query[2]);
+                
                 break;
                 default:
                 break;
