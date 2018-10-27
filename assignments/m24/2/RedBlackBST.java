@@ -97,6 +97,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * in this symbol table.
      * @return the number of key-value pairs
      * in this symbol table
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     public int size() {
         return size(root);
@@ -120,6 +125,10 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      *     in the symbol table
      * @throws IllegalArgumentException
      * if {@code key} is {@code null}
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
      */
     public Value get(Key key) {
         if (key == null)
@@ -135,6 +144,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * @param      key   The key
      *
      * @return     { description_of_the_return_value }
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     private Value get(Node x, Key key) {
         while (x != null) {
@@ -154,6 +168,7 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      *     {@code false} otherwise
      * @throws IllegalArgumentException
      * if {@code key} is {@code null}
+     * time complexity: O(1)
      */
     public boolean contains(Key key) {
         return get(key) != null;
@@ -172,6 +187,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * @param val the value
      * @throws IllegalArgumentException
      * if {@code key} is {@code null}
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     public void put(Key key, Value val) {
         if (key == null) throw new IllegalArgumentException(
@@ -193,6 +213,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * @param      key   The key
      * @param      val   The value
      *
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      * @return     { description_of_the_return_value }
      */
     private Node put(Node h, Key key, Value val) {
@@ -223,6 +248,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * value from the symbol table.
      * @throws NoSuchElementException
      * if the symbol table is empty
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     public void deleteMin() {
         if (isEmpty()) throw new NoSuchElementException(
@@ -243,6 +273,7 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * @param      h     { parameter_description }
      *
      * @return     { description_of_the_return_value }
+     * time complexity: constant O(1)
      */
     private Node deleteMin(Node h) {
         if (h.left == null)
@@ -379,6 +410,10 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * @param      h     { parameter_description }
      *
      * @return     { description_of_the_return_value }
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
      */
     private Node rotateLeft(Node h) {
         // assert (h != null) && isRed(h.right);
@@ -396,6 +431,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * { function_description }.
      *
      * @param      h     { parameter_description }
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     private void flipColors(Node h) {
         // h must have opposite
@@ -417,6 +457,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * @param      h     { parameter_description }
      *
      * @return     { description_of_the_return_value }
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     private Node moveRedLeft(Node h) {
         // assert (h != null);
@@ -438,6 +483,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * @param      h     { parameter_description }
      *
      * @return     { description_of_the_return_value }
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     private Node moveRedRight(Node h) {
         // assert (h != null);
@@ -457,6 +507,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * @param      h     { parameter_description }
      *
      * @return     { description_of_the_return_value }
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     private Node balance(Node h) {
         // assert (h != null);
@@ -481,6 +536,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * the BST (for debugging).
      * @return the height of
      * the BST (a 1-node tree has height 0)
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     public int height() {
         return height(root);
@@ -503,6 +563,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * key in the symbol table
      * @throws NoSuchElementException
      * if the symbol table is empty
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     public Key min() {
         if (isEmpty()) throw new NoSuchElementException(
@@ -516,6 +581,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * @param      x     { parameter_description }
      *
      * @return     { description_of_the_return_value }
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     private Node min(Node x) {
         // assert x != null;
@@ -528,6 +598,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * @return the largest key in the symbol table
      * @throws NoSuchElementException
      * if the symbol table is empty
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     public Key max() {
         if (isEmpty()) throw new NoSuchElementException(
@@ -541,6 +616,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * @param      x     { parameter_description }
      *
      * @return     { description_of_the_return_value }
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     private Node max(Node x) {
         // assert x != null;
@@ -559,6 +639,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * if there is no such key
      * @throws IllegalArgumentException
      * if {@code key} is {@code null}
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     public Key floor(Key key) {
         if (key == null) throw new IllegalArgumentException(
@@ -577,6 +662,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * @param      key   The key
      *
      * @return     { description_of_the_return_value }
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     private Node floor(Node x, Key key) {
         if (x == null) return null;
@@ -598,6 +688,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * if there is no such key
      * @throws IllegalArgumentException
      * if {@code key} is {@code null}
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     public Key ceiling(Key key) {
         if (key == null) throw new IllegalArgumentException(
@@ -616,6 +711,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * @param      key   The key
      *
      * @return     { description_of_the_return_value }
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     private Node ceiling(Node x, Key key) {
         if (x == null) return null;
@@ -639,6 +739,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * @throws IllegalArgumentException
      * unless {@code k} is between 0 and
      *        <em>n</em>–1
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     public Key select(int k) {
         if (k < 0 || k >= size()) {
@@ -674,6 +779,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * the symbol table strictly less than {@code key}
      * @throws IllegalArgumentException
      * if {@code key} is {@code null}
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     public int rank(Key key) {
         if (key == null) throw new IllegalArgumentException(
@@ -710,6 +820,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * for (Key key : st.keys())}.
      * @return all keys in the symbol
      * table as an {@code Iterable}
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     public Iterable<Key> keys() {
         if (isEmpty()) return new Queue<Key>();
@@ -750,6 +865,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * @param      queue  The queue
      * @param      lo     The lower
      * @param      hi     The higher
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     private void keys(Node x, Queue<Key> queue, Key lo, Key hi) {
         if (x == null) return;
@@ -772,6 +892,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * @throws IllegalArgumentException if
      * either {@code lo} or {@code hi}
      *    is {@code null}
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     public int size(Key lo, Key hi) {
         if (lo == null) {
@@ -795,6 +920,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * { function_description }.
      *
      * @return     { description_of_the_return_value }
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     private boolean check() {
         if (!isBST()) {
@@ -817,6 +947,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * Determines if bst.
      *
      * @return     True if bst, False otherwise.
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     private boolean isBST() {
         return isBST(root, null, null);
@@ -895,6 +1030,11 @@ class RedBlackBST<Key extends Comparable<Key>, Value> {
      * Determines if balanced.
      *
      * @return     True if balanced, False otherwise.
+     * time complexity: 
+     * best: O(1)
+     * average case: 1.0lgN
+     * worst case: 2lgN
+     * ordered operations: constant , 1
      */
     private boolean isBalanced() {
         int black = 0;     // number of black links on path from root to min
