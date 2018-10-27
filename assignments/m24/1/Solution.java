@@ -32,7 +32,7 @@ class Student {
 /**
 ** Solution class.
 **/
-final class Solution {
+class Solution {
 /**
 ** Main. 
 ** @param args String , Double
