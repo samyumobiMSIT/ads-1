@@ -1,12 +1,17 @@
 import java.util.*;
 class Student {
     /**
-    * params: 
-    * rollno,name, total
+    * roll no
     */
     String rollno;
    private String name;
+   /** 
+    * name
+    **/
    private double total;
+    /** 
+    * total
+    **/
     Student() {
     }
     Student(final String rollno, final String name, final double total) {
