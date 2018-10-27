@@ -5,8 +5,6 @@ Starting audit...
 [ERROR] D:\ads-1\assignments\m24\1\Solution.java:20:5: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] D:\ads-1\assignments\m24\1\Solution.java:29:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
 [ERROR] D:\ads-1\assignments\m24\1\Solution.java:31: Line has trailing spaces. [RegexpSingleline]
-[ERROR] D:\ads-1\assignments\m24\1\Solution.java:34:29: Parameter args should be final. [FinalParameters]
-[ERROR] D:\ads-1\assignments\m24\1\Solution.java:34:38: Expected @param tag for 'args'. [JavadocMethod]
-[ERROR] D:\ads-1\assignments\m24\1\Solution.java:43: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\ads-1\assignments\m24\1\Solution.java:34:40: Expected @param tag for 'args'. [JavadocMethod]
 Audit done.
-Checkstyle ends with 9 errors.
+Checkstyle ends with 7 errors.

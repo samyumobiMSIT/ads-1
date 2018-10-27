@@ -27,25 +27,25 @@ class Student {
 ** Solution class.
 **/
 class Solution {
-    /**
-    ** Main. 
-    ** @param args String , Double
-    **/
-    public static void main(String[] args) {
+/**
+** Main. 
+** @param args String , Double
+**/
+public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         Student s = new Student();
         LinearProbingHashST<String, String> lpht1 = new LinearProbingHashST();
         LinearProbingHashST<String, Double> lpht2 = new LinearProbingHashST();
         int n = Integer.parseInt(sc.nextLine());
         for (int i = 0; i < n; i++) {
-            String str = sc.nextLine();
-            String[] tokens = str.split(",");
-            s = new Student(tokens[0], tokens[1], 
+             String str = sc.nextLine();
+             String[] tokens = str.split(",");
+             s = new Student(tokens[0], tokens[1],
                 Double.parseDouble(tokens[2]));
              lpht1.put(tokens[0], tokens[1]);
              lpht2.put(tokens[0], Double.parseDouble(tokens[2]));
             }
-            int m = Integer.parseInt(sc.nextLine());
+        int m = Integer.parseInt(sc.nextLine());
         for (int i = 0; i < m; i++) {
             String que = sc.nextLine();
             String[] query = que.split(" ");
