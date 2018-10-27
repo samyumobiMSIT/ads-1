@@ -48,7 +48,7 @@ Your Output:
 45.4
 99.3
 ----------------------------------------
-########## Testcase 2: Failed ##########
+########## Testcase 2: Passed ##########
 Expected Output: 
 Knuth
 100.0
@@ -81,12 +81,12 @@ John
 Hank
 13.3
 Jeannette Caines
-Student not present
-Student not present
-Student not present
-Student not present
+Student doesn't exists...
+Student doesn't exists...
+Student doesn't exists...
+Student doesn't exists...
 ----------------------------------------
-########## Testcase 3: Failed ##########
+########## Testcase 3: Passed ##########
 Expected Output: 
 7.213
 Michael Hale
@@ -920,7 +920,7 @@ Annie Maccoby
 David Macfarlane
 10.42
 88.39
-Student not present
+Student doesn't exists...
 8.759
 40.1
 35.74
@@ -961,7 +961,7 @@ Korey Jackson
 Betty Halbreich
 35.6
 Dana C. Jack
-Student not present
+Student doesn't exists...
 Elaine Hall
 Bonnie MacBird
 54.45
@@ -1041,7 +1041,7 @@ Chuck Hagel
 John W. Jacobs
 David Hagedorn
 Todd Haberkorn
-Student not present
+Student doesn't exists...
 Mary Curran Hackett
 Catherine Macaulay
 Kinley MacGregor

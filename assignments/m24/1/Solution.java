@@ -56,7 +56,7 @@ public static void main(final String[] args) {
             String que = sc.nextLine();
             String[] query = que.split(" ");
             if (!lpht1.contains(query[1])) {
-                System.out.println("Student not present");
+                System.out.println("Student doesn't exists...");
                 continue;
             }
             switch (query[2]) {
